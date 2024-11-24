@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fdf2e9;
+    background-color: #d5d4d6;
     padding: 30px 40px;
 }
 
@@ -39,22 +39,22 @@ nav a:hover {
     padding: 5px 20px;
     border-radius: 5px;
     color: #fff;
-    background-color: #e67e22;
+    background-color: black;
     font-size: 22px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.main-nav-link.nav-cta:hover {
-    background-color: #cf711f;
-}
+/* .main-nav-link.nav-cta:hover {
+      background-color: #d5d4d6;
+  } */
 
 .home-section {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #fdf2e9;
+    background-color: #d5d4d6;
     gap: 20px;
 }
 
@@ -91,7 +91,7 @@ nav a:hover {
 .home-section button {
     padding: 10px 20px;
     font-size: 25px;
-    background-color: orange;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
