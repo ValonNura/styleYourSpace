@@ -35,7 +35,8 @@
         <h1>About Us</h1>
       </div>
     </section>
-
+  <br>
+  <br>
     <!-- Our Company Section -->
     <section class="our-company">
       <h1>What We Provide</h1>
@@ -155,10 +156,21 @@
       </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- Contact Us Section -->
     <section class="a">
-      <h1>Contact us for more information!</h1>
+      <h1>Reach out for more information!</h1>
+      <button id="redirectButton">Contact Us</button>
+
     </section>
+    <script>
+      const button = document.getElementById('redirectButton');
+      button.addEventListener('click', function () {
+        window.location.href = 'Contactus.html'; 
+      });
+    </script>
+
+    
+    
 
     <!-- Footer Section -->
     <section class="footer">
@@ -173,7 +185,7 @@
       </div>
     </section>
 
-    <!-- JavaScript for Toggle Menu -->
+    <!-- JavaScript for Toggle Menu 
     <script>
       var navLinks = document.getElementById("navLinks");
       function showMenu() {
@@ -183,5 +195,7 @@
         navLinks.style.right = "-200px";
       }
     </script>
+
+  -->
   </body>
 </html>

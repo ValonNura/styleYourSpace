@@ -143,9 +143,10 @@ h1 {
 p {
   color: #777;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 20px;
   padding: 10px;
+  color: #000;
 }
 
 .row {
@@ -162,6 +163,7 @@ p {
   padding: 20px 12px;
   box-sizing: border-box;
   transition: 0.5s;
+
 }
 
 h3 {
@@ -172,6 +174,7 @@ h3 {
 
 .our-company-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  
 }
 
 /*-----Company----*/
@@ -262,6 +265,7 @@ h3 {
 
 .comments-col p {
   padding: 0;
+  font-weight: 500;
 }
 
 .comments-col h3 {
@@ -292,6 +296,27 @@ h3 {
   color: #fff;
   margin-bottom: 20px;
   padding: 0;
+}
+
+#redirectButton {
+  background-color: #666565; 
+  color: white;  
+  border:#2a2727;                       
+  border-radius: 5px;      
+  padding: 10px 20px;     
+  font-size: 14px;           
+  font-weight: bold;    
+  cursor: pointer;        
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; 
+}
+
+
+#redirectButton:hover {
+  background-color: #dbe5ef; 
+  color:#494242;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); 
 }
 
 /*----Footer----*/
