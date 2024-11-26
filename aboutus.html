@@ -30,6 +30,11 @@
             <li><a href="SignIn.html">Sign in</a></li>
           </ul>
         </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </div>
+        
+       
       </nav>
       <div class="text-box">
         <h1>About Us</h1>
@@ -39,7 +44,17 @@
   <br>
     <!-- Our Company Section -->
     <section class="our-company">
-      <h1>What We Provide</h1>
+        <div class="intro-section">
+          <p>
+           Our mission is to inspire and transform your living spaces with innovative designs and ideas. 
+            We believe that every home, office, or personal space has the potential to become a haven of comfort, elegance, and style. With a team of talented professionals and a deep understanding of design trends, we ensure that every project reflects your personality and lifestyle.
+            Discover how we can help you create spaces that not only meet your needs but also inspire your daily life. Let us partner with you to craft environments that are as beautiful as they are functional—a place you can truly call your own.
+            </p>
+            <img src="./img/bg.png" >
+        </div>
+  
+        <div class="what-we-provide">
+          <h1>What We Provide</h1>
       <div class="row">
         <div class="our-company-col">
           <h3>What We Do</h3>
@@ -185,17 +200,17 @@
       </div>
     </section>
 
-    <!-- JavaScript for Toggle Menu 
+
     <script>
-      var navLinks = document.getElementById("navLinks");
-      function showMenu() {
-        navLinks.style.right = "0";
-      }
-      function hideMenu() {
-        navLinks.style.right = "-200px";
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
       }
     </script>
+    <script src="js/scriptt.js"></script>
 
-  -->
+    
+
+
   </body>
 </html>

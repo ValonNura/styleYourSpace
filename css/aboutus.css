@@ -7,7 +7,7 @@
 .header {
   min-height: 500px;
   width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+  background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.6)),
     url(../img/design.webp);
   background-position: center;
   background-size: cover;
@@ -83,51 +83,39 @@ nav img {
   color: #494242;
 }
 
-/*--@media(min-width: 700px){
-
-  .toggle-icon{
-    display:none;
-  }
-}
-
-@media(max-width: 700px){
-  .text-box h1{
-    font-size:20px;
-  }
-  .nav-links ul li{
-    display:block;
-  }
-  .nav-links{
-    position: absolute;
-    background: #5a5050;
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right:-200px;
-    text-align: left;
-    z-index: 2;
-    transition: 1s;
-
-  }
-
-.toggle-icon{
-  display:block;
-  color:#fff;
-  margin:10px;
-  font-size:22px;
-  cursor:pointer;
-}
-
-
-
-.nav-links ul{
-  padding: 30px;
-}
-
-
-}
 
 /*----Our Company----*/
+
+.intro-section {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  height: calc(100vh - 600px); 
+  padding: 0 20px; 
+  box-sizing: border-box; 
+  margin: 0; 
+  
+}
+
+
+.intro-section img {
+  border-radius: 5px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+  width: 35%; 
+  height: auto; 
+
+}
+
+.intro-section p {
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  width: 55%; 
+  margin: 0; 
+  color:#343333;
+}
+
+
 .our-company {
   width: 80%;
   margin: auto;
@@ -138,6 +126,12 @@ nav img {
 h1 {
   font-size: 30px;
   font-weight: 600;
+
+}
+
+.what-we-provide h1 {
+  text-align: center;
+  margin-top: 150px; /* Hapësirë sipër titullit */
 }
 
 p {
@@ -146,7 +140,7 @@ p {
   font-weight: 400;
   line-height: 20px;
   padding: 10px;
-  color: #000;
+  color: #343333;
 }
 
 .row {
@@ -266,6 +260,7 @@ h3 {
 .comments-col p {
   padding: 0;
   font-weight: 500;
+  color:#343333;
 }
 
 .comments-col h3 {
@@ -331,3 +326,48 @@ h3 {
   margin-top: 20px;
   font-weight: 600;
 }
+
+
+.footer .icons i {
+  font-size: 20px; 
+  transition: color 0.3s ease; 
+}
+
+.footer .icons i:hover {
+  color: #8a8a8a; 
+}
+
+/* Responsive */
+.menu-icon {
+  display: none;  /*Mu shfaq vetem ekrane ma tvogla */
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background-color: none;
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+/* Responsivitet per ekranet ma tvogla */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: none;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+ /* Shfaqja e ikones ne ekranet ma tvogla */
+  .menu-icon {
+    display: block;
+  }
+}
+
