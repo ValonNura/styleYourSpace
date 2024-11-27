@@ -6,39 +6,39 @@
     <link rel="stylesheet" href="css/home.css" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <title>Document</title>
   </head>
   <body>
-    <header class="main-header">
+    <section class="header">
       <nav>
-        <a href="">Home</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="">Products</a>
-        <a href="">Contact</a>
-        <a href="">Inspiration</a>
-        <a class="main-nav-link nav-cta" href="SignIn.html">Sign in</a>
+        <div class="nav-links" id="navLinks">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">Inspirations</a></li>
+            <li><a href="">Contact us</a></li>
+            <li><a href="SignIn.html">Sign in</a></li>
+          </ul>
+        </div>
       </nav>
-    </header>
-
-    <section class="home-section">
-      <div class="aside">
-        <h1>Style Your Space</h1>
-        <p>
-          Transform your living space into a sanctuary of style and comfort with
-          our expert interior design solutions. From modern minimalism to
-          timeless elegance, we craft personalized designs that reflect your
-          personality and enhance functionality. Whether you're updating a
-          single room or redesigning your entire home, our creative team focuses
-          on every detail—lighting, furniture, color palettes, and textures—to
-          bring your vision to life. Let us help you create spaces that inspire,
-          relax, and feel uniquely yours.
-        </p>
-        <button>Shop Best Seller</button>
-      </div>
-      <img src="img/interior.webp" alt="interior" />
     </section>
+
+    <div class="slick-container">
+      <div><img src="img/interior4.jpg" alt="Image 1" /></div>
+      <div><img src="img/interior5.jpg" alt="Image 2" /></div>
+      <div><img src="img/interior6.jpg" alt="Image 2" /></div>
+      <div><img src="img/interior7.jpg" alt="Image 2" /></div>
+      <div><img src="img/interior8.jpg" alt="Image 2" /></div>
+      <div><img src="img/interior9.jpg" alt="Image 2" /></div>
+      <div><img src="img/interior10.jpg" alt="Image 2" /></div>
+    </div>
 
     <section class="section-featured">
       <div class="container">
@@ -72,5 +72,26 @@
         <i class="fab fa-linkedin"></i>
       </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".slick-container").slick({
+          autoplay: true, // Enable autoplay
+          autoplaySpeed: 2000, // Set autoplay speed (milliseconds)
+          speed: 1000, // Transition speed (milliseconds)
+          infinite: true, // Infinite looping
+          arrows: true, // Show navigation arrows
+          dots: false, // Remove navigation dots
+          pauseOnHover: false, // Disable pause on hover
+          cssEase: "linear", // Smooth linear transition
+          prevArrow:
+            '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+          nextArrow:
+            '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+        });
+      });
+    </script>
   </body>
 </html>
