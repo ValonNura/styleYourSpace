@@ -308,7 +308,7 @@ nav img {
 .background-container {
     width: 1200px;
     height: 400px;
-    background: rgba(255, 255, 255, 255, 0.13);
+    background: #080710;
     margin: 0 auto;
     display: flex;
     justify-content: center;
