@@ -57,8 +57,6 @@ function validateSignup() {
   alert("Signup successful!");
   return true;
 }
-<<<<<<< HEAD
-=======
 
 function toggleMenu() {
   if (window.innerWidth <= 768) {
@@ -66,7 +64,3 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
   }
 }
-
-// Slick
-
->>>>>>> dc4d3b215d0a7c8033a8af9c6d7b1de2f4497665

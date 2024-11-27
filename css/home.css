@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-/* Navbar styles */
+/* Navbar */
 .header {
     position: relative;
     width: 100%;
@@ -201,7 +201,6 @@ nav img {
     object-fit: cover;
 }
 
-/* Ensure dots and arrows are styled correctly */
 .slick-dots {
     position: absolute;
     bottom: 10px;
@@ -254,16 +253,64 @@ nav img {
 
 .slick-prev {
     left: 10px;
-    /* Adjust left arrow position */
 }
 
 .slick-next {
     right: 10px;
-    /* Adjust right arrow position */
 }
 
 .slick-prev:hover,
 .slick-next:hover {
     background: rgba(0, 0, 0, 0.8);
-    /* Darker on hover */
+}
+
+.slider-item {
+    position: relative;
+}
+
+
+.slider-content {
+    position: absolute;
+    bottom: 90px;
+    left: 90px;
+    text-align: left;
+    color: white;
+    z-index: 10;
+}
+
+.slider-content h1 {
+    font-size: 29px;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider-content p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.slider-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.slider-content button:hover {
+    background-color: #0056b3;
+}
+
+.background-container {
+    width: 1200px;
+    height: 400px;
+    background: rgba(255, 255, 255, 255, 0.13);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
