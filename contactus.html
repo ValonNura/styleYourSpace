@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Your Space</title>
+    <link rel="stylesheet" href="css/aboutus.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <section class="header">
+        <nav>
+          <div class="nav-links" id="navLinks">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="">Inspirations</a></li>
+              <li><a href="">Contact us</a></li>
+              <li><a href="SignIn.html">Sign in</a></li>
+            </ul>
+          </div>
+          <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+          </div>
+      </nav>
+      <div class="text-box">
+        <h1>Contact Us</h1>
+      </div>
+    </section>
+ 
+    <!-- Contact Us -->
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d863309.304150382!2d20.961859697891196!3d42.62701743251875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13537af354bf7df1%3A0xbfffeedfabc31791!2sKosovo!5e0!3m2!1sen!2sus!4v1732677153320!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+      <h4>Stay connected with us</h4>
+      <p>Follow us on social media for the latest updates, inspiration, and more!</p>
+      <div class="icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
