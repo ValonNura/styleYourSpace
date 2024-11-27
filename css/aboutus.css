@@ -131,11 +131,19 @@ h1 {
 
 .what-we-provide h1 {
   text-align: center;
+<<<<<<< HEAD
+  margin-top: 150px; /* Hapësirë sipër titullit */
+}
+
+p {
+  color: #777;
+=======
   margin-top: 150px; /* Hapesire siper titullit */
 }
 
 p {
    color: #777;
+>>>>>>> d1df3a319e870c2f0a46c6ed1d7db77cf43732fb
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -151,7 +159,11 @@ p {
 
 .our-company-col {
   flex-basis: 31%;
+<<<<<<< HEAD
+  background: #d5d4d6;
+=======
   background: #ddd2d2;
+>>>>>>> d1df3a319e870c2f0a46c6ed1d7db77cf43732fb
   border-radius: 10px;
   margin-bottom: 5%;
   padding: 20px 12px;

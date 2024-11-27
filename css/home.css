@@ -1,3 +1,4 @@
+/* Reset and global styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,39 +11,58 @@ body {
     padding: 0;
 }
 
-.main-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d5d4d6;
-    padding: 30px 40px;
+/* Navbar */
+.header {
+    position: relative;
+    width: 100%;
 }
 
 nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 2% 6%;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a {
-    font-size: 22px;
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-    transition: color 0.3s ease;
+nav img {
+    width: 150px;
 }
 
-nav a:hover {
-    color: rgb(239, 80, 80);
+.nav-links {
+    flex: 1;
+    text-align: right;
 }
 
-.main-nav-link.nav-cta {
-    padding: 5px 20px;
-    border-radius: 5px;
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
     color: #fff;
-    background-color: black;
-    font-size: 22px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.5;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
 }
 
 /* .main-nav-link.nav-cta:hover {
@@ -90,7 +110,7 @@ nav a:hover {
 
 .home-section button {
     padding: 10px 20px;
-    font-size: 25px;
+    font-size: 16px;
     background-color: black;
     color: white;
     border: none;
@@ -166,4 +186,176 @@ nav a:hover {
 
 .icons i:hover {
     color: #8a8a8a;
+}
+
+
+.slick-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: gray;
+    border: none;
+}
+
+.slick-dots .slick-active button {
+    background: black;
+}
+
+.slick-arrow {
+    z-index: 10;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-item {
+    position: relative;
+}
+
+
+.slider-content {
+    position: absolute;
+    bottom: 90px;
+    left: 90px;
+    text-align: left;
+    color: white;
+    z-index: 10;
+}
+
+.slider-content h1 {
+    font-size: 29px;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider-content p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.slider-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.slider-content button:hover {
+    background-color: #0056b3;
+}
+
+.background-container {
+    height: 500px;
+    background: #080710;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.under-slider h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.under-slider .discount {
+    margin-top: 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.order-furniture p {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+}
+
+.under-slider a {
+    text-decoration: none;
+}
+
+.discount {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.order-furniture {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.under-slider .discount:hover {
+    background-color: grey;
 }
