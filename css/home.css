@@ -319,7 +319,7 @@ nav img {
     font-size: 30px;
 }
 
-.under-slider button {
+.under-slider .discount {
     margin-top: 20px;
     border: 2px solid;
     border-radius: 5px;
@@ -334,13 +334,17 @@ nav img {
     color: white;
 }
 
+.under-slider a {
+    text-decoration: none;
+}
+
 .discount {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 15px;
     cursor: pointer;
-    margin-bottom: 15px; 
-  }
+    margin-bottom: 15px;
+}
 
 .order-furniture {
     text-align: center;
@@ -350,4 +354,8 @@ nav img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.under-slider .discount:hover {
+    background-color: grey;
 }
