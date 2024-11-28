@@ -156,17 +156,18 @@ nav img {
 }
 
 
-
+/* footer updated */
 .footer {
-    background-color: #f7f4f1;
+    background-color: #e2dbd3;
     color: #333;
     padding: 40px 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    border-top: 3px solid #bfa68d;
-}
-
-.footer-boxes {
+    border-top: 3px solid #bdb3a9;
+    margin-top: 100px;
+  }
+  
+  .footer-boxes {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -175,51 +176,51 @@ nav img {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px 0;
-}
-
-.footer-box {
+  }
+  
+  .footer-box {
     flex: 1;
     min-width: 280px;
     padding: 20px;
     text-align: left;
-}
-
-.footer-box h4 {
+  }
+  
+  .footer-box h4 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #bfa68d;
-}
-
-.footer-box p {
+    color: #333;
+  }
+  
+  .footer-box p {
     font-size: 16px;
     margin: 10px 0 20px;
     line-height: 24px;
-}
-
-.icons {
+  }
+  
+  .icons {
     display: flex;
     gap: 15px;
     margin-top: 10px;
-}
-
-.icons a {
+  }
+  
+  .icons a {
     color: #333;
     font-size: 24px;
     transition: transform 0.3s ease, color 0.3s ease-in-out;
-}
-
-.icons a:hover {
-    color: #ff6b6b;
+  }
+  
+  .icons a:hover {
+    color: #8f8383;
     transform: scale(1.1);
-}
-
-.newsletter {
+  }
+  
+  .newsletter {
     display: flex;
     gap: 10px;
-}
-
-.newsletter input {
+  }
+  
+  .newsletter input {
     padding: 12px;
     width: calc(100% - 150px);
     max-width: 300px;
@@ -227,35 +228,34 @@ nav img {
     border-radius: 30px;
     outline: none;
     font-size: 14px;
-}
-
-.newsletter input:focus {
+  }
+  
+  .newsletter input:focus {
     border-color: #bfa68d;
-}
-
-.newsletter button {
+  }
+  
+  .newsletter button {
     padding: 12px 20px;
-    background-color: #bfa68d;
+    background-color:#333;
     color: white;
     font-size: 14px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease;
-}
-
-.newsletter button:hover {
-    background-color: #ff4757;
+  }
+  
+  .newsletter button:hover {
+    background-color: #8f8383;
     transform: scale(1.05);
-}
-
-.footer p:last-child {
+  }
+  
+  .footer p:last-child {
     margin-top: 20px;
     font-size: 14px;
     color: #555;
     text-align: center;
-}
-
+  }
 
 .slick-container {
     width: 100%;

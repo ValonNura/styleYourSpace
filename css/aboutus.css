@@ -318,12 +318,12 @@ h3 {
 
 /* footer updated */
 .footer {
-  background-color: #f7f4f1;
+  background-color: #e2dbd3;
   color: #333;
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  border-top: 3px solid #bfa68d;
+  border-top: 3px solid #bdb3a9;
   margin-top: 100px;
 }
 
@@ -349,7 +349,7 @@ h3 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #bfa68d;
+  color: #333;
 }
 
 .footer-box p {
@@ -371,7 +371,7 @@ h3 {
 }
 
 .icons a:hover {
-  color: #ff6b6b;
+  color: #8f8383;
   transform: scale(1.1);
 }
 
@@ -396,7 +396,7 @@ h3 {
 
 .newsletter button {
   padding: 12px 20px;
-  background-color: #bfa68d;
+  background-color:#333;
   color: white;
   font-size: 14px;
   border: none;
@@ -406,7 +406,7 @@ h3 {
 }
 
 .newsletter button:hover {
-  background-color: #ff4757;
+  background-color: #8f8383;
   transform: scale(1.05);
 }
 

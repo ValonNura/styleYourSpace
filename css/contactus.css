@@ -183,14 +183,15 @@ nav {
   border-radius: 10px;
 }
 
-/* footer */
+/* footer updated */
 .footer {
-  background-color: #f7f4f1;
+  background-color: #e2dbd3;
   color: #333;
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  border-top: 3px solid #bfa68d;
+  border-top: 3px solid #bdb3a9;
+  margin-top: 100px;
 }
 
 .footer-boxes {
@@ -215,7 +216,7 @@ nav {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #bfa68d;
+  color: #333;
 }
 
 .footer-box p {
@@ -237,7 +238,7 @@ nav {
 }
 
 .icons a:hover {
-  color: #ff6b6b;
+  color: #8f8383;
   transform: scale(1.1);
 }
 
@@ -262,7 +263,7 @@ nav {
 
 .newsletter button {
   padding: 12px 20px;
-  background-color: #bfa68d;
+  background-color:#333;
   color: white;
   font-size: 14px;
   border: none;
@@ -272,7 +273,7 @@ nav {
 }
 
 .newsletter button:hover {
-  background-color: #ff4757;
+  background-color: #8f8383;
   transform: scale(1.05);
 }
 
