@@ -1,0 +1,130 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+  }
+  
+  /* Header Section */
+  .header{
+    min-height: 500px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.6)),
+      url(./img/company.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 6%;
+    background-color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links ul li {
+    margin: 0 15px;
+  }
+  
+  .nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+  
+  .nav-links ul li a:hover {
+    background-color: #444;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .text-box {
+    width: 90%;
+    color: #ffffff;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-box h1 {
+    font-size: 50px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+  /* Location Section */
+  .location {
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+  }
+  
+  .location iframe {
+    width: 100%;
+  }
+  
+  /* Footer Section */
+  .footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  
+  .footer .icons i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .icons i:hover {
+    color: #8a8a8a;
+  }
+  
