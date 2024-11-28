@@ -88,21 +88,21 @@ nav img {
 
 .intro-section {
   display: flex;
-  align-items: center; 
-  justify-content: space-between; 
-  height: calc(100vh - 600px); 
-  padding: 0 20px; 
-  box-sizing: border-box; 
-  margin: 0; 
-  
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 600px);
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0;
+
 }
 
 
 .intro-section img {
-  border-radius: 5px; 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
-  width: 35%; 
-  height: auto; 
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  width: 35%;
+  height: auto;
 
 }
 
@@ -110,9 +110,9 @@ nav img {
   color: #555;
   font-family: 'Poppins', sans-serif;
   line-height: 1.8;
-  width: 55%; 
-  margin: 0; 
-  color:#343333;
+  width: 55%;
+  margin: 0;
+  color: #343333;
 }
 
 
@@ -131,19 +131,11 @@ h1 {
 
 .what-we-provide h1 {
   text-align: center;
-<<<<<<< HEAD
-  margin-top: 150px; /* Hapësirë sipër titullit */
+  margin-top: 150px;
 }
 
 p {
   color: #777;
-=======
-  margin-top: 150px; /* Hapesire siper titullit */
-}
-
-p {
-   color: #777;
->>>>>>> d1df3a319e870c2f0a46c6ed1d7db77cf43732fb
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -159,11 +151,7 @@ p {
 
 .our-company-col {
   flex-basis: 31%;
-<<<<<<< HEAD
   background: #d5d4d6;
-=======
-  background: #ddd2d2;
->>>>>>> d1df3a319e870c2f0a46c6ed1d7db77cf43732fb
   border-radius: 10px;
   margin-bottom: 5%;
   padding: 20px 12px;
@@ -180,7 +168,7 @@ h3 {
 
 .our-company-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
-  
+
 }
 
 /*-----Company----*/
@@ -272,7 +260,7 @@ h3 {
 .comments-col p {
   padding: 0;
   font-weight: 500;
-  color:#343333;
+  color: #343333;
 }
 
 .comments-col h3 {
@@ -306,52 +294,132 @@ h3 {
 }
 
 #redirectButton {
-  background-color: #666565; 
-  color: white;  
-  border:#2a2727;                       
-  border-radius: 5px;      
-  padding: 10px 20px;     
-  font-size: 14px;           
-  font-weight: bold;    
-  cursor: pointer;        
+  background-color: #666565;
+  color: white;
+  border: #2a2727;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 
 #redirectButton:hover {
-  background-color: #dbe5ef; 
-  color:#494242;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
-  transform: translateY(-2px); 
+  background-color: #dbe5ef;
+  color: #494242;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
-/*----Footer----*/
+/* footer updated */
 .footer {
-  width: 100%;
+  background-color: #f7f4f1;
+  color: #333;
+  padding: 40px 20px;
   text-align: center;
-  padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+  border-top: 3px solid #bfa68d;
+  margin-top: 100px;
 }
 
-.footer h4 {
-  margin-bottom: 25px;
-  margin-top: 20px;
+.footer-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  text-align: left;
+}
+
+.footer-box h4 {
+  font-size: 24px;
   font-weight: 600;
+  margin-bottom: 15px;
+  color: #bfa68d;
 }
 
-
-.footer .icons i {
-  font-size: 20px; 
-  transition: color 0.3s ease; 
+.footer-box p {
+  font-size: 16px;
+  margin: 10px 0 20px;
+  line-height: 24px;
 }
 
-.footer .icons i:hover {
-  color: #8a8a8a; 
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
+
+.icons a {
+  color: #333;
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+
+.icons a:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: calc(100% - 150px);
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  font-size: 14px;
+}
+
+.newsletter input:focus {
+  border-color: #bfa68d;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  background-color: #bfa68d;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #ff4757;
+  transform: scale(1.05);
+}
+
+.footer p:last-child {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
 
 /* Responsive */
 .menu-icon {
-  display: none;  /*Mu shfaq vetem ekrane ma tvogla */
+  display: none;
+  /*Mu shfaq vetem ekrane ma tvogla */
   font-size: 20px;
   color: #fff;
   cursor: pointer;
@@ -361,6 +429,7 @@ h3 {
   top: 15px;
   right: 10px;
 }
+
 /* Responsivitet per ekranet ma tvogla */
 @media (max-width: 768px) {
   .nav-links {
@@ -377,9 +446,9 @@ h3 {
   .nav-links.active {
     display: block;
   }
- /* Shfaqja e ikones ne ekranet ma tvogla */
+
+  /* Shfaqja e ikones ne ekranet ma tvogla */
   .menu-icon {
     display: block;
   }
 }
-

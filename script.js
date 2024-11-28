@@ -15,9 +15,15 @@ function validateLogin() {
     return false;
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Updated email regex to ensure domain suffix like .com or .net
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(email)) {
-    alert("Please enter a valid email.");
+    alert("Please enter a valid email (e.g., example@domain.com).");
+    return false;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
     return false;
   }
 
@@ -38,14 +44,18 @@ function validateSignup() {
     return false;
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Updated email regex to ensure domain suffix like .com or .net
+  const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org|edu|gov)$/;
   if (!emailRegex.test(email)) {
-    alert("Please enter a valid email.");
+    alert("Please enter a valid email (e.g., example@domain.com).");
     return false;
   }
 
-  if (password.length < 6) {
-    alert("Password must be at least 6 characters long.");
+  const passwordRegex = /^(?=.*[A-Z]).{8,}$/;
+  if (!passwordRegex.test(password)) {
+    alert(
+      "Password must be at least 8 characters long and include at least one uppercase letter."
+    );
     return false;
   }
 
