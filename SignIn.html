@@ -9,15 +9,26 @@
   </head>
   <body>
     <div class="container">
+      <!-- Login Form -->
       <div class="form-container" id="loginForm">
         <h2>Login</h2>
         <form onsubmit="return validateLogin()">
-          <input type="email" id="loginEmail" placeholder="Email" required />
+          <div id="loginError" class="error-message"></div>
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email address (e.g., user@example.com)"
+          />
           <input
             type="password"
             id="loginPassword"
             placeholder="Password"
             required
+            minlength="8"
+            title="Password must be at least 8 characters long"
           />
           <button type="submit" class="animated-button">Login</button>
         </form>
@@ -25,24 +36,44 @@
           Don't have an account?
           <span onclick="toggleForm()">Signup</span>
         </p>
+        <div class="social-login">
+          <p>Or login with:</p>
+          <div>
+            <button class="social-btn facebook">Facebook</button>
+            <button class="social-btn google">Google</button>
+          </div>
+        </div>
       </div>
 
+      <!-- Signup Form -->
       <div class="form-container hidden" id="signupForm">
         <h2>Signup</h2>
         <form onsubmit="return validateSignup()">
+          <div id="signupError" class="error-message"></div>
           <input type="text" id="signupName" placeholder="Full Name" required />
-          <input type="email" id="signupEmail" placeholder="Email" required />
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email address (e.g., user@example.com)"
+          />
           <input
             type="password"
             id="signupPassword"
             placeholder="Password"
             required
+            minlength="8"
+            title="Password must be at least 8 characters long"
           />
           <input
             type="password"
             id="signupConfirmPassword"
             placeholder="Confirm Password"
             required
+            minlength="8"
+            title="Password must be at least 8 characters long"
           />
           <button type="submit" class="animated-button">Signup</button>
         </form>

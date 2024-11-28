@@ -7,15 +7,14 @@ function toggleForm() {
 }
 
 function validateLogin() {
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
 
   if (!email || !password) {
     alert("Please fill out all fields.");
     return false;
   }
 
-  // Updated email regex to ensure domain suffix like .com or .net
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(email)) {
     alert("Please enter a valid email (e.g., example@domain.com).");
@@ -32,19 +31,18 @@ function validateLogin() {
 }
 
 function validateSignup() {
-  const name = document.getElementById("signupName").value;
-  const email = document.getElementById("signupEmail").value;
-  const password = document.getElementById("signupPassword").value;
-  const confirmPassword = document.getElementById(
-    "signupConfirmPassword"
-  ).value;
+  const name = document.getElementById("signupName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value.trim();
+  const confirmPassword = document
+    .getElementById("signupConfirmPassword")
+    .value.trim();
 
   if (!name || !email || !password || !confirmPassword) {
     alert("Please fill out all fields.");
     return false;
   }
 
-  // Updated email regex to ensure domain suffix like .com or .net
   const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org|edu|gov)$/;
   if (!emailRegex.test(email)) {
     alert("Please enter a valid email (e.g., example@domain.com).");
