@@ -1,5 +1,5 @@
-* {
-  margin: 0;
+*{
+  margin:0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -13,28 +13,28 @@
   background-position: center;
   background-size: cover;
   position: relative;
-
+  
 }
 
 body {
   background-color: #f9f9f9;
-
-
+  
+  
 }
 
 nav {
 
-  display: flex;
+  display:flex;
   padding: 2% 6%;
   justify-content: space-between;
   align-items: center;
-
+ 
 
 
 }
 
 nav img {
-  width: 150 px;
+  width:150 px;
 }
 
 .nav-links {
@@ -43,69 +43,67 @@ nav img {
 
 }
 
-.nav-links ul li {
+.nav-links ul li{
   list-style: none;
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
 
-.nav-links ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
+.nav-links ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
 }
 
-.nav-links ul li::after {
-  content: '';
+.nav-links ul li::after{
+  content:'';
   width: 0%;
   height: 2px;
   background: #fff;
   display: block;
-  margin: auto;
-  transition: 0.5;
+  margin:auto;
+  transition:0.5;
 
 }
 
 
-.nav-links ul li:hover::after {
-  width: 100%;
+.nav-links ul li:hover::after{
+  width:100%;
 }
 
 
 main {
   padding: 2rem;
-  margin-top: 2rem;
+  margin-top: 2rem; 
 }
 
 .bestsellers-title {
-  width: 90%;
-  color: #ffffff;
-  /* Ngjyra e bardhë */
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 50px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  /* Fonti */
+width: 90%;
+color: #ffffff; 
+position: absolute;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+font-size: 50px; 
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Fonti */
 }
 
 .bestseller-label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #d8d8d8b3;
-  color: rgb(70, 68, 68);
-  font-size: 0.8rem;
-  font-weight: normal;
-  padding: 5px 10px;
-  border-radius: 11px;
-  z-index: 10;
-  text-transform: uppercase;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+position: absolute;
+top: 10px;
+left: 10px;
+background-color: #d8d8d8b3; 
+color: rgb(70, 68, 68);
+font-size: 0.8rem;
+font-weight: normal;
+padding: 5px 10px;
+border-radius: 11px;
+z-index: 10;
+text-transform: uppercase;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -128,37 +126,36 @@ main {
 }
 
 .product {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  flex: 1 1 calc(33.333% - 1.5rem);
-  max-width: calc(33.333% - 1.5rem);
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  position: relative;
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 1rem;
+text-align: center;
+flex: 1 1 calc(33.333% - 1.5rem);
+max-width: calc(33.333% - 1.5rem);
+transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
+position: relative;
 }
 
 .product:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  border-color: #aaa;
-  background-color: #f9f9f9;
-  color: #333;
+transform: scale(1.05); 
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+border-color: #aaa; 
+background-color: #f9f9f9; 
+  color: #333; 
 }
 
 .product img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s;
+width: 100%; 
+max-height: 200px; 
+object-fit: cover; 
+margin-bottom: 0.5rem;
+transition: transform 0.3s; 
 }
 
 .product:hover img {
-  transform: scale(1.1);
+transform: scale(1.1);
 }
-
 .product h4 {
   font-size: 1rem;
   color: #555;
@@ -171,17 +168,18 @@ main {
 }
 
 .product .price {
-  font-size: 1.2rem;
-  font-weight: normal;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
+font-size: 1rem; 
+font-weight: normal; 
+font-family: 'Poppins', sans-serif; 
+color: #333; 
 }
 
 .product .old-price {
-  text-decoration: line-through;
-  font-weight: normal;
-  font-family: 'Poppins', sans-serif;
+text-decoration: line-through;
+font-weight: normal; 
+font-family: 'Poppins', sans-serif;
 }
+
 
 /* footer updated */
 .footer {
@@ -283,3 +281,5 @@ main {
   color: #555;
   text-align: center;
 }
+
+
