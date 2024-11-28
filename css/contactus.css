@@ -1,67 +1,66 @@
-/* General Styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.header {
+  min-height: 500px;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
+    url(../img/interior.jpeg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 body {
   background-color: #f9f9f9;
 }
 
-/* Header Section */
-.header {
-  height: 700px;
-  width: 100%;
-  background: url('../img/fixedContact.webp') no-repeat center center/cover;
-  position: relative;
-}
-
 nav {
   display: flex;
+  padding: 2% 6%;
   justify-content: space-between;
   align-items: center;
-  padding: 2% 6%;
-  /* z-index: 10; */
-  position: absolute;
-  width: 100%;
 }
 
+nav img {
+  width: 150 px;
+}
 
 .nav-links {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.nav-links ul {
-  display: flex;
-  list-style: none;
+  flex: 1;
+  text-align: right;
 }
 
 .nav-links ul li {
-  margin: 0 15px;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
 }
 
 .nav-links ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
-  padding: 8px 12px;
-  display: inline-block;
 }
 
-.nav-links ul li a:hover {
-  text-decoration: underline;
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  margin: auto;
+  transition: 0.5;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
+.nav-links ul li:hover::after {
+  width: 100%;
 }
+
 
 .text-box {
   width: 90%;
@@ -75,7 +74,11 @@ nav {
 
 .text-box h1 {
   font-size: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -158,7 +161,7 @@ nav {
 }
 
 .contact-form button:hover {
-  background-color: #ff4757;
+  background-color: #8f8383;
 }
 
 .contact-info ul {
