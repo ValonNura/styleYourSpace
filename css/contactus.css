@@ -1,0 +1,283 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+/* Header Section */
+.header {
+  height: 700px;
+  width: 100%;
+  background: url('../img/fixedContact.webp') no-repeat center center/cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 6%;
+  /* z-index: 10; */
+  position: absolute;
+  width: 100%;
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links ul li {
+  margin: 0 15px;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.nav-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.text-box {
+  width: 90%;
+  color: #ffffff;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    background: none;
+    /* Keeps navbar background transparent */
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+.contact-us {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.contact-form, .contact-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 45%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1, .contact-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-form p, .contact-info p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #bfa68d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ff4757;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contact-info ul li i {
+  margin-right: 10px;
+  color: #bfa68d;
+}
+
+.map iframe {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* footer */
+.footer {
+  background-color: #f7f4f1;
+  color: #333;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  border-top: 3px solid #bfa68d;
+}
+
+.footer-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  text-align: left;
+}
+
+.footer-box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #bfa68d;
+}
+
+.footer-box p {
+  font-size: 16px;
+  margin: 10px 0 20px;
+  line-height: 24px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.icons a {
+  color: #333;
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+
+.icons a:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: calc(100% - 150px);
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  font-size: 14px;
+}
+
+.newsletter input:focus {
+  border-color: #bfa68d;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  background-color: #bfa68d;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #ff4757;
+  transform: scale(1.05);
+}
+
+.footer p:last-child {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
