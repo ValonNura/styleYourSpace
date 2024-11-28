@@ -106,10 +106,11 @@ nav {
 }
 
 .contact-container {
+  width: 1200px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 40px;
 }
 
 .contact-form, .contact-info {
