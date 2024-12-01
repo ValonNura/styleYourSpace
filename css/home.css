@@ -362,7 +362,7 @@ nav img {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #007bff;
+    background-color: #8f8383;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -370,73 +370,86 @@ nav img {
 }
 
 .slider-content button:hover {
-    background-color: #0056b3;
-}
-
-.background-container {
-    height: 500px;
-    background: #1a1a2e;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.under-slider h1 {
-    color: white;
-    font-size: 30px;
-}
-
-.under-slider .discount {
-    margin-top: 20px;
-    border: 2px solid;
-    border-radius: 5px;
-    padding: 10px 20px;
-    justify-content: center;
-    display: flex;
-}
-
-.order-furniture p {
-    margin-top: 15px;
-    text-align: center;
-    color: white;
-}
-
-.under-slider a {
-    text-decoration: none;
-}
-
-.discount {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 15px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.order-furniture {
-    text-align: center;
-    padding: 20px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.under-slider .discount:hover {
-    background-color: grey;
+    background-color: #8f8383;
 }
 
 .under-slider {
     margin-top: 30px;
-}
+  }
+  
+  .background-container {
+    height: 500px;
+    background: linear-gradient(120deg, #ccbeb2, #b59f91); 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(181, 161, 141, 0.2); 
 
-.discount:hover {
-    background-color: #ff4757;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  }
+  
+  .order-furniture {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .order-furniture h1 {
+    font-size: 36px;
+    color: #fff;
+  }
+  
+  .order-furniture .highlight {
+    color: #867e70; 
+  }
+  
+  .discount {
+    margin-top: 20px;
+    background-color: #1a1a2e;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .discount:hover {
+    background-color: #8f8383;
+    color: #1e1912;
+    transform: scale(1.05);
+  }
+  
+  .order-furniture p {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  
+  .order-furniture p strong {
+    color: #ffe0b2;
+  }
+  
+  .testimonial {
+    margin-top: 15px;
+    font-style: italic;
+    color: #1e1912;
+  }
+  
+  .testimonial q {
+    quotes: "“" "”";
+  }
+  
+  .testimonial cite {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+  }  
