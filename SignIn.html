@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="icon" href="img/favicon-32x32.png" />
   </head>
   <body>
     <div class="container">
+      
       <!-- Login Form -->
       <div class="form-container" id="loginForm">
-        <h2>Login</h2>
+        <h2>Log in</h2>
         <form onsubmit="return validateLogin()">
           <div id="loginError" class="error-message"></div>
           <input
@@ -30,24 +31,36 @@
             minlength="8"
             title="Password must be at least 8 characters long"
           />
-          <button type="submit" class="animated-button">Login</button>
+          <button type="submit" class="animated-button">Log in</button>
         </form>
         <p>
           Don't have an account?
-          <span onclick="toggleForm()">Signup</span>
+          <span onclick="toggleForm()">Sign up</span>
         </p>
         <div class="social-login">
-          <p>Or login with:</p>
+          <p>Or log in with:</p>
           <div>
-            <button class="social-btn facebook">Facebook</button>
-            <button class="social-btn google">Google</button>
+            <!-- Facebook Login Button -->
+            <button
+              class="social-btn facebook"
+              onclick="redirectTo('https://www.facebook.com/login')"
+            >
+              Facebook
+            </button>
+            <!-- Google Login Button -->
+            <button
+              class="social-btn google"
+              onclick="redirectTo('https://accounts.google.com/signin')"
+            >
+              Google
+            </button>
           </div>
         </div>
       </div>
 
       <!-- Signup Form -->
       <div class="form-container hidden" id="signupForm">
-        <h2>Signup</h2>
+        <h2>Sign up</h2>
         <form onsubmit="return validateSignup()">
           <div id="signupError" class="error-message"></div>
           <input type="text" id="signupName" placeholder="Full Name" required />
@@ -75,13 +88,19 @@
             minlength="8"
             title="Password must be at least 8 characters long"
           />
-          <button type="submit" class="animated-button">Signup</button>
+          <button type="submit" class="animated-button">Sign up</button>
         </form>
         <p>
-          Already have an account? <span onclick="toggleForm()">Login</span>
+          Already have an account? <span onclick="toggleForm()">Log in</span>
         </p>
       </div>
     </div>
+    <script>
+    
+      function redirectTo(url) {
+        window.location.href = url;
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

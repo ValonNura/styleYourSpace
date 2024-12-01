@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f4e3d3, #dbc8b0);
+    background: linear-gradient(135deg, #e6d8c3, #c6bfb3);
     color: #5a4d4d;
     overflow: hidden;
   }
@@ -59,7 +59,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(90deg, #d3a784, #b28666);
+    background: #b79376;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -68,7 +68,7 @@ body {
   }
   
   button:hover {
-    background: linear-gradient(90deg, #b28666, #7f6552);
+    background: linear-gradient(90deg, #9a785f, #7f6552);
     transform: translateY(-3px) scale(1.05);
   }
   
@@ -89,7 +89,7 @@ body {
   
   .social-login p {
     margin-bottom: 10px;
-    color: #5a4d4d;
+    color: #3f3737;
   }
   
   .social-btn {
@@ -109,7 +109,7 @@ body {
   }
   
   .social-btn.google {
-    background: #db4437;
+    background: #b13328;
   }
   
   .social-btn:hover {
@@ -130,7 +130,7 @@ body {
   }
   
   span:hover {
-    color: #4d3737;
+    color: #2f2424;
     transform: scale(1.1);
   }
   
