@@ -30,16 +30,45 @@
     
         <h1 class="products-title">Products</h1>
         </section>
+       <div class="container">
+         <div class="filter-container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bestseller">Best Sellers</button>
+                <button class="filter-btn" data-filter="sale">On Sale</button>
+            </div>
+            
+            <!-- Add sorting options -->
+            <div class="sort-options">
+                <select id="sort-select">
+                    <option value="">Sort by</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+        
+                <select id="categorySelect" onchange="filterByCategory(this.value)">
+                    <option value="all">All Categories</option>
+                    <option value="lighting">Lighting</option>
+                    <option value="beds">Beds</option>
+                    <option value="sofas">Sofas</option>
+                    <option value="dressers">Dressers</option>
+                    <option value="chairs">Chairs</option>
+                    <option value="decor">Decor</option>
+                </select>
+            </div>
+        </div>
         <main>
     </br>
         <!-- Lighting -->
-        <section class="category" id="lighting">
+        <section class="category" id="lighting" ">
             <h3>Lighting</h3>
             
             <div class="products">
 
                 <!--Product 1-->
-                <div class="product">
+                <div class="product" data-category="lighting">
                     <img src="./img/black_lamp.png" alt="Black Table Lamp" loading="lazy">
                     <h4>Black Table Lamp</h4>
                     <p class="dimensions">15" H x 8" W x 8" D</p>
@@ -53,7 +82,7 @@
                     </div>
                 </div>
                 <!--Product 2-->
-                <div class="product">
+                <div class="product" data-category="lighting">
                     <div class="bestseller-label">Best Seller</div> <!-- Etiketa -->
                     <img src="./img/gold_chandelier.jpg" alt="Gold Chandelier" loading="lazy">
                     <h4>Gold Chandelier</h4>
@@ -69,7 +98,7 @@
                 </div>
 
                  <!-- Product 3 -->
-                 <div class="product">
+                 <div class="product" data-category="lighting">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/black&gold_chandelier.jpg" alt="Black&Gold Chandelier" loading="lazy">
                     <h4>Black&Gold Chandelier</h4>
@@ -85,7 +114,7 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product">
+                <div class="product" data-category="lighting">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/blue_table_lamp.jpg" alt="Blue Table Lamp" loading="lazy">
                     <h4>Blue Table Lamp</h4>
@@ -101,7 +130,7 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product">
+                <div class="product" data-category="lighting">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/black_floor_lamp.jpg" alt="Black Floor Lamp" loading="lazy">
                     <h4>Black Floor Lamp</h4>
@@ -117,7 +146,7 @@
                 </div>
                 
                 <!-- Product 6 -->
-                <div class="product">
+                <div class="product" data-category="lighting">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/totem_floor_lamp.jpg" alt="Totem Floor Lamp" loading="lazy">
                     <h4>Totem Floor Lamp</h4>
@@ -136,12 +165,12 @@
         </section>
     </br>
         <!-- Beds -->
-        <section class="category" id="beds">
+        <section class="category" id="beds" data-category="beds">
             <h3>Beds</h3>
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
+                <div class="product" data-category="beds">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/royalblue_bed.jpg" alt="Royal Blue Bed" loading="lazy">
                     <h4>Royal Blue Bed</h4>
@@ -156,7 +185,7 @@
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="product">
+                <div class="product" data-category="beds">
                     <img src="./img/clauson_bed.png" alt="Clauson Bed" loading="lazy">
                     <h4>Clauson Bed</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -170,7 +199,7 @@
                     </div>
                 </div>
                 <!-- Product 3 -->
-                <div class="product">
+                <div class="product" data-category="beds">
                     <img src="./img/leather_bed.png" alt="Leather Bed" loading="lazy">
                     <h4>Leather Bed</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -185,7 +214,7 @@
                 </div>
 
                  <!-- Product 4 -->
-                 <div class="product">
+                 <div class="product" data-category="beds">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/elle_bed.jpg" alt="Elle Bed" loading="lazy">
                     <h4>Elle Bed</h4>
@@ -201,7 +230,7 @@
                 </div>
 
                  <!-- Product 5 -->
-                 <div class="product">
+                 <div class="product" data-category="beds">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/gray_bed.jpg" alt="Gray Bed" loading="lazy">
                     <h4>Gray Bed</h4>
@@ -216,7 +245,7 @@
                     </div>
                 </div>
                  <!-- Product 6 -->
-                 <div class="product">
+                 <div class="product" data-category="beds">
                     <img src="./img/wood_bed.png" alt="Wood Bed" loading="lazy">
                     <h4>Wood Bed</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -234,12 +263,12 @@
         </section>
     </br>
         <!-- Sofas -->
-        <section class="category" id="sofas">
+        <section class="category" id="sofas" data-category="sofas">
             <h3>Sofas</h3>
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
+                <div class="product" data-category="sofas">
                     <img src="./img/lisbon_sofa.png" alt="Lisbon Sofa" loading="lazy">
                     <h4>Lisbon Sofa</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -253,7 +282,7 @@
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="product">
+                <div class="product" data-category="sofas">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/vella_sofa.jpg" alt="Vella Sofa" loading="lazy">
                     <h4>Vella Sofa</h4>
@@ -268,7 +297,7 @@
                     </div>
                 </div>
                 <!-- Product 3 -->
-                <div class="product">
+                <div class="product" data-category="sofas">
                     <img src="./img/leonne_sofa.png" alt="Leonne Sofa" loading="lazy">
                     <h4>Leonne Sofa</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -283,7 +312,7 @@
                 </div>
 
                  <!-- Product 4 -->
-                 <div class="product">
+                 <div class="product" data-category="sofas">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/bubble_sofa.jpg" alt="Bubble Sofa" loading="lazy">
                     <h4>Bubble Sofa</h4>
@@ -299,7 +328,7 @@
                 </div>
                 
                  <!-- Product 5 -->
-                 <div class="product">
+                 <div class="product" data-category="sofas">
                     <img src="./img/velvet_sofa.png" alt="Velvet Sofa" loading="lazy">
                     <h4>Velvet Sofa</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -314,7 +343,7 @@
                 </div>
 
                  <!-- Product 6 -->
-                 <div class="product">
+                 <div class="product" data-category="sofas">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/knoll_sofa.jpg" alt="Knoll Sofa" loading="lazy">
                     <h4>Knoll Sofa</h4>
@@ -333,12 +362,12 @@
         </section>
     </br>
           <!-- Dressers -->
-          <section class="category" id="dressers">
+          <section class="category" id="dressers" data-category="dressers">
             <h3>Dressers</h3>
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
+                <div class="product" data-category="dressers">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/black_dresser.jpg" alt="Black Dresser" loading="lazy">
                     <h4>Black Dresser</h4>
@@ -353,7 +382,7 @@
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="product">
+                <div class="product" data-category="dressers">
                     <img src="./img/nicholas_dresser.png" alt="Nicholas Dresser" loading="lazy">
                     <h4>Nicholas Dresser</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -367,7 +396,7 @@
                     </div>
                 </div>
                 <!-- Product 3 -->
-                <div class="product">
+                <div class="product" data-category="dressers">
                     <img src="./img/shagreen_dresser.png" alt="Shagreen Dresser" loading="lazy">
                     <h4>Shagreen Dresser</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -382,7 +411,7 @@
                 </div>
 
                  <!-- Product 4 -->
-                 <div class="product">
+                 <div class="product" data-category="dressers">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/beige_dresser.jpg" alt="Beige Dresser" loading="lazy">
                     <h4>Beige Dresser</h4>
@@ -397,7 +426,7 @@
                     </div>
                 </div>
                  <!-- Product 5 -->
-                 <div class="product">
+                 <div class="product" data-category="dressers">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/wood_dresser.jpg" alt="Wood Dresser" loading="lazy">
                     <h4>Wood Dresser</h4>
@@ -413,7 +442,7 @@
                 </div>
                  
                  <!-- Product 6 -->
-                 <div class="product">
+                 <div class="product" data-category="dressers">
                     <img src="./img/oak_dresser.png" alt="Oak Dresser" loading="lazy">
                     <h4>Oak Dresser</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -431,12 +460,12 @@
         </section>
     </br>
          <!-- Chairs -->
-         <section class="category" id="chairs">
+         <section class="category" id="chairs" data-category="chairs">
             <h3>Chairs</h3>
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
+                <div class="product" data-category="chairs">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/tearoom_chair.jpg" alt="Tearoom Chair" loading="lazy">
                     <h4>Tearoom Chair</h4>
@@ -452,7 +481,7 @@
                 </div>
 
                  <!-- Product 2 -->
-                 <div class="product">
+                 <div class="product" data-category="chairs">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/russel_armchair.jpg" alt="Russel Armchair" loading="lazy">
                     <h4>Russel Armchair</h4>
@@ -467,7 +496,7 @@
                     </div>
                 </div>
                  <!-- Product 3 -->
-                 <div class="product">
+                 <div class="product" data-category="chairs">
                     <img src="./img/bronze_chair.png" alt="Bronze Chair" loading="lazy">
                     <h4>Bronze Chair</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -481,7 +510,7 @@
                     </div>
                 </div>
                  <!-- Product 4 -->
-                 <div class="product">
+                 <div class="product" data-category="chairs">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/rocking_chair.jpg" alt="Rocking Chair" loading="lazy">
                     <h4>Rocking Chair</h4>
@@ -496,7 +525,7 @@
                     </div>
                 </div>
                  <!-- Product 5 -->
-                 <div class="product">
+                 <div class="product" data-category="chairs">
                     <img src="./img/velvet_chair.png" alt="Velvet Chair" loading="lazy">
                     <h4>Velvet Chair</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -511,7 +540,7 @@
                 </div>
 
                  <!-- Product 6 -->
-                 <div class="product">
+                 <div class="product" data-category="chairs">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/armchair.jpg" alt="Off-White Armchair" loading="lazy">
                     <h4>Off-White Armchair</h4>
@@ -530,12 +559,12 @@
         </section>
     </br>
         <!-- Decor -->
-        <section class="category" id="decor">
+        <section class="category" id="decor" data-category="decor">
             <h3>Decor</h3>
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
+                <div class="product" data-category="decor">
                     <img src="./img/blackmetal_vase.jpg" alt="Black Metal Vase" loading="lazy">
                     <h4>Black Metal Vase</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -550,7 +579,7 @@
                 </div>
 
                  <!-- Product 2 -->
-                 <div class="product">
+                 <div class="product" data-category="decor">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/bull_bookholder.jpg" alt="Bull Bookholder" loading="lazy">
                     <h4>Bull Bookholder</h4>
@@ -565,7 +594,7 @@
                     </div>
                 </div>
                  <!-- Product 3 -->
-                 <div class="product">
+                 <div class="product" data-category="decor">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/wall_mirror.png" alt="Wall Mirror" loading="lazy">
                     <h4>Wall Mirror</h4>
@@ -580,7 +609,7 @@
                     </div>
                 </div>
                  <!-- Product 4 -->
-                 <div class="product">
+                 <div class="product" data-category="decor">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/wall_art.png" alt="Wall Art" loading="lazy">
                     <h4>Wall Art</h4>
@@ -595,7 +624,7 @@
                     </div>
                 </div>
                  <!-- Product 5 -->
-                 <div class="product">
+                 <div class="product" data-category="decor">
                     <img src="./img/brown_wallpaper.png" alt="Brown Wallpaper" loading="lazy">
                     <h4>Brown Wallpaper</h4>
                     <p class="dimensions">17" H x 8" W x 8" D</p>
@@ -610,7 +639,7 @@
                 </div>
 
                  <!-- Product 6 -->
-                 <div class="product">
+                 <div class="product" data-category="decor">
                     <div class="bestseller-label">Best Seller</div>
                     <img src="./img/decorative_scull.png" alt="Decorative Scull" loading="lazy">
                     <h4>Decorative Scull</h4>
@@ -634,6 +663,7 @@
 
 
     </main>
+       </div>
     
 <!-- footer -->
 <section class="footer">
@@ -680,6 +710,7 @@
     <p>&copy; 2024 Style Your Space. All rights reserved.</p>
   </section>
 
+  <script src="script.js"></script>
     
 </body>
 </html>
