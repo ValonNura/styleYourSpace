@@ -124,27 +124,17 @@ function filterProducts(category) {
 
 // Function for category dropdown
 function filterByCategory(category) {
-  console.log("Selected category:", category); // Debug log
-
-  // Reset active state of filter buttons when using dropdown
-  document.querySelectorAll(".filter-btn").forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  const products = document.querySelectorAll(".product");
-  console.log("Total products found:", products.length); // Debug log
-
-  products.forEach((product) => {
-    const productCategory = product.getAttribute("data-category");
-    console.log("Product category:", productCategory); // Debug log
-
-    if (category === "all") {
-      product.style.display = "block";
-    } else if (productCategory === category) {
-      product.style.display = "block";
-      console.log("Showing product:", product); // Debug log
+  const sections = document.querySelectorAll('.category');
+  
+  sections.forEach(section => {
+    if (category === 'all') {
+      section.style.display = 'block';
     } else {
-      product.style.display = "none";
+      if (section.id === category) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
     }
   });
 }
@@ -171,6 +161,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show all products by default
   filterProducts("all");
+});
+
+function sortProducts(sortType) {
+    const productsContainer = document.querySelector('.container');
+    const products = Array.from(productsContainer.getElementsByClassName('product'));
+    
+    products.sort((a, b) => {
+        switch(sortType) {
+            case 'price-asc':
+                return getPrice(a) - getPrice(b);
+            case 'price-desc':
+                return getPrice(b) - getPrice(a);
+            case 'name-asc':
+                return getName(a).localeCompare(getName(b));
+            case 'name-desc':
+                return getName(b).localeCompare(getName(a));
+            default:
+                return 0;
+        }
+    });
+    
+    // Find or create a container for all products
+    let allProductsContainer = document.querySelector('.all-products');
+    if (!allProductsContainer) {
+        allProductsContainer = document.createElement('div');
+        allProductsContainer.className = 'products all-products';
+        productsContainer.appendChild(allProductsContainer);
+    }
+    
+    // Hide category sections and show all products in one container
+    const categorySections = document.querySelectorAll('.category');
+    categorySections.forEach(section => section.style.display = 'none');
+    
+    allProductsContainer.innerHTML = '';
+    products.forEach(product => {
+        allProductsContainer.appendChild(product.cloneNode(true));
+    });
+}
+
+// Helper function to get the price value
+function getPrice(productElement) {
+    const priceText = productElement.querySelector('.price').textContent;
+    // Extract the current price (after discount if exists)
+    const price = priceText.split('$').pop().trim();
+    return parseFloat(price);
+}
+
+// Helper function to get the name value
+function getName(productElement) {
+    return productElement.querySelector('h4').textContent.trim();
+}
+
+// Add event listener for the sort select
+document.addEventListener("DOMContentLoaded", function() {
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+            sortProducts(this.value);
+        });
+    }
 });
 
 
