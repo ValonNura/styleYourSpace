@@ -99,6 +99,52 @@
       </div>
     </section>
 
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-truck"></i>
+          <h3>Free Delivery</h3>
+          <p>Free shipping on orders over $500</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-tools"></i>
+          <h3>Assembly Service</h3>
+          <p>Professional furniture assembly</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-exchange-alt"></i>
+          <h3>Easy Returns</h3>
+          <p>30-day hassle-free returns</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-couch"></i>
+          <h3>Custom Design</h3>
+          <p>Personalized furniture solutions</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Warranty</h3>
+          <p>5-year warranty on all products</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock customer service</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Interior Design</h3>
+          <p>Professional design consultation</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h3>Flexible Payment</h3>
+          <p>Multiple payment options available</p>
+        </div>
+      </div>
+    </section>
+
     <section class="footer">
       <div class="footer-boxes">
         <div class="footer-box">
@@ -162,6 +208,51 @@
             '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
         });
       });
+    </script>
+    <script>
+    $(document).ready(function() {
+        // Hover effect with scale and shadow
+        $('.service-card').hover(
+            function() {
+                $(this).css({
+                    'transform': 'scale(1.05)',
+                    'box-shadow': '0 10px 20px rgba(0,0,0,0.2)',
+                    'transition': 'all 0.3s ease'
+                });
+            },
+            function() {
+                $(this).css({
+                    'transform': 'scale(1)',
+                    'box-shadow': 'none',
+                    'transition': 'all 0.3s ease'
+                });
+            }
+        );
+
+        // Click to show more details
+        $('.service-card').click(function() {
+            // Store the current card
+            const card = $(this);
+            
+            // Get the service title
+            const serviceTitle = card.find('h3').text();
+            
+            // Create custom messages for each service
+            const serviceDetails = {
+                'Free Delivery': 'We offer complimentary delivery for orders above $500. Delivery usually takes 3-5 business days.',
+                'Assembly Service': 'Our professional team will assemble your furniture with care and precision.',
+                'Easy Returns': 'Don\'t love it? Return within 30 days for a full refund.',
+                'Custom Design': 'Work with our designers to create your perfect piece.',
+                'Warranty': 'All products come with a comprehensive 5-year warranty.',
+                '24/7 Support': 'Our customer service team is always here to help.',
+                'Interior Design': 'Get expert advice from our certified interior designers.',
+                'Flexible Payment': 'Choose from various payment plans including installments.'
+            };
+
+            // Show alert with detailed information
+            alert(`${serviceTitle}\n\n${serviceDetails[serviceTitle]}`);
+        });
+    });
     </script>
   </body>
 </html>
