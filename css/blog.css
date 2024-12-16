@@ -24,7 +24,7 @@ nav {
     left: 0;
     width: 100%;
     /* z-index: 1;   */
-    padding: 2% 6%;
+    padding: 20px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,7 +71,7 @@ nav img {
 /* Hero Section */
 .hero {
     background: url('../img/blog1.jpg') no-repeat center center/cover;
-    height: 90vh;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;

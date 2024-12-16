@@ -73,6 +73,10 @@ function toggleMenu() {
   }
 }
 
+// ----------------------------------------------------------------------
+
+
+
 // filter of products
 
 function filterProducts(category) {
