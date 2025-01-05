@@ -418,39 +418,195 @@ h3 {
 }
 
 
-/* Responsive */
-.menu-icon {
-  display: none;
-  /*Mu shfaq vetem ekrane ma tvogla */
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-  background-color: none;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
-
-/* Responsivitet per ekranet ma tvogla */
+/* --- Mobile Devices (up to 768px) --- */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    width: 90%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: none;
+  nav {
     flex-direction: column;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 10px;
   }
 
-  .nav-links.active {
-    display: block;
+  .nav-links ul {
+    display: block; 
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background:transparent;
+    position: absolute;
+    top: 10px;
+    left: 0;
   }
 
-  /* Shfaqja e ikones ne ekranet ma tvogla */
-  .menu-icon {
-    display: block;
+  .nav-links.active ul {
+    display: flex; 
+  }
+  .text-box h1 {
+    font-size: 36px;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    gap: 20px;
+  }
+
+  .intro-section p {
+    width: 90%;
+  }
+
+  .intro-section img {
+    width: 80%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .our-company-col,
+  .Company-col,
+  .comments-col {
+    flex-basis: 100%;
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    width: 100%;
+  }
+
+  .a {
+    padding: 50px 0;
+  }
+
+  #redirectButton {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
+
+/* --- Tablets (up to 1024px) --- */
+@media (max-width: 1024px) {
+  nav {
+    padding: 1% 4%;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .intro-section img {
+    width: 50%;
+  }
+
+  .our-company-col,
+  .Company-col,
+  .comments-col {
+    flex-basis: 48%;
+    margin:10px;
+  }
+
+  .footer-boxes {
+    gap: 15px;
+  }
+}
+
+/* --- Large Screens (above 1024px) --- */
+@media (min-width: 1025px) {
+  .intro-section img {
+    width: 40%;
+  }
+
+  .our-company-col,
+  .Company-col {
+    flex-basis: 30%;
+  }
+}
+/* --- Mobile Devices (up to 480px) --- */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .nav-links ul {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    position: absolute;
+    top: 8px;
+    left: 0;
+  }
+
+  .nav-links.active ul {
+    display: flex;
+  }
+
+  .text-box h1 {
+    font-size: 30px;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    gap: 15px;
+  }
+
+  .intro-section p {
+    width: 90%;
+  }
+
+  .intro-section img {
+    width: 70%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .our-company-col,
+  .Company-col,
+  .comments-col {
+    flex-basis: 100%;
+    margin: 10px 0;
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    width: 100%;
+  }
+
+  .a {
+    padding: 40px 0;
+  }
+
+  #redirectButton {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+}
+

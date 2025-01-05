@@ -286,3 +286,206 @@ nav img {
   color: #555;
   text-align: center;
 }
+
+
+/* --- Mobile (up to 480px) --- */
+@media (max-width: 480px) {
+  header {
+    padding: 1% 5%;
+  }
+
+  .text-box h1 {
+    font-size: 30px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .nav-links {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links ul {
+    display: block; 
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    position: absolute;
+    top: 8px;
+    left: 0;
+  }
+
+  .nav-links.active ul {
+    display: flex; 
+  }
+
+  .nav-links ul li {
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .nav-links ul li a {
+    font-size: 16px;
+  }
+
+
+  .contact-us {
+    padding: 20px 10px; 
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px; 
+
+  .contact-form, .contact-info {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .contact-form h1,
+  .contact-info h1 {
+    font-size: 22px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px; 
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box; 
+  }
+
+  .contact-form button {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%; 
+    box-sizing: border-box;
+  }
+
+  .map iframe {
+    height: 200px;
+  }
+
+  /* Footer */
+  .footer-boxes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+}
+
+/* --- Tablet (up to 768px) --- */
+@media (max-width: 768px) {
+  .text-box h1 {
+    font-size: 36px;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 5% 3%;
+  }
+
+  .nav-links ul li {
+    padding: 12px 10px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+
+  .map iframe {
+    height: 200px;
+  }
+}
+
+/* --- Tablet Landscape (up to 1024px) --- */
+@media (max-width: 1024px) {
+  .text-box h1 {
+    font-size: 42px;
+  }
+
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 48%;
+  }
+
+  .footer-boxes {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 45%;
+  }
+
+  .map iframe {
+    height: 250px;
+  }
+}
+
+/* --- Desktop (above 1024px) --- */
+@media (min-width: 1025px) {
+  .text-box h1 {
+    font-size: 50px;
+  }
+
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 45%;
+  }
+
+  .footer-boxes {
+    gap: 20px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 45%;
+  }
+
+  .map iframe {
+    height: 300px;
+  }
+}
+}

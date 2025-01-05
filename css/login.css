@@ -138,3 +138,82 @@ body {
     display: none;
   }
   
+  /* Small Devices: Mobile */
+@media (max-width: 480px) {
+  
+  .container {
+    padding: 20px;
+    max-width: 95%;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  input,
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .social-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* Medium Devices: Tablets and Small Screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: 80%;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  input,
+  button {
+    font-size: 15px;
+    padding: 13px;
+  }
+  .social-btn {
+    font-size: 13px;
+    padding: 9px;
+  }
+}
+
+/* Large Devices: Desktops */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 450px;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  input,
+  button {
+    font-size: 18px;
+    padding: 16px;
+  }
+  .social-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 500px;
+    padding: 50px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  input,
+  button {
+    font-size: 20px;
+    padding: 18px;
+  }
+  .social-btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+}

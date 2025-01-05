@@ -371,3 +371,187 @@ main {
   margin: 0 auto;
   padding: 20px;
 }
+/* --- Mobile (up to 480px) --- */
+@media (max-width: 480px) {
+  .header {
+    min-height: 300px;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  nav img {
+    width: 120px;
+  }
+
+  .nav-links {
+    text-align: center;
+    flex: 1;
+  }
+
+  .nav-links ul li {
+    display: block;
+    padding: 10px;
+  }
+
+  .products-title {
+    font-size: 30px;
+  }
+
+  .products {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter input {
+    width: 100%;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
+
+  .bestseller-label {
+    top: 10px;
+    left: 10px;
+    font-size: 0.7rem; 
+  }
+}
+
+/* --- Mobile (up to 480px) --- */
+@media (max-width: 480px) {
+  .header {
+    min-height: 300px;
+  }
+
+  .nav-links {
+    text-align: center;
+  }
+
+  .nav-links ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .products-title {
+    font-size: 30px;
+  }
+
+.filter-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin:5px;
+}
+
+  .products {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .product {
+    flex-basis: 40%; 
+    max-width: 40%; 
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-box .newsletter input,
+  .footer-box .newsletter button {
+    width: 100%;
+  }
+
+  .bestseller-label {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* --- Tablet (up to 768px) --- */
+@media (max-width: 768px) {
+  .header {
+    min-height: 400px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .nav-links {
+    text-align: center;
+  }
+
+  .products-title {
+    font-size: 35px;
+  }
+
+  .products {
+    flex-direction: column;
+  }
+
+  .product {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-boxes {
+    flex-direction: column;
+  }
+
+  .newsletter input {
+    width: 100%;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
+}
+
+/* --- Tablet Landscape (up to 1024px) --- */
+@media (max-width: 1024px) {
+  .products-title {
+    font-size: 45px;
+  }
+
+  .product {
+    flex-basis: 48%;
+    max-width: 48%;
+  }
+
+  .footer-boxes {
+    gap: 15px;
+  }
+
+  .bestseller-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Desktop (above 1024px) --- */
+@media (min-width: 1025px) {
+  .product {
+    flex-basis: 30%;
+    max-width: 30%;
+  }
+
+  .footer-boxes {
+    gap: 20px;
+  }
+}

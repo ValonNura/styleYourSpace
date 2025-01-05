@@ -228,3 +228,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+const hamburger = document.getElementById('hamburger-icon');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
+
+
+
+
+
