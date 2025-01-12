@@ -78,14 +78,11 @@ nav img {
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-
-
-/* Responsive Styles */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
     background: none;
-    /* Keeps navbar background transparent */
+    
   }
 
   .menu-icon {
@@ -186,7 +183,6 @@ nav img {
   border-radius: 10px;
 }
 
-/* footer updated */
 .footer {
   background-color: #e2dbd3;
   color: #333;
@@ -287,8 +283,6 @@ nav img {
   text-align: center;
 }
 
-
-/* --- Mobile (up to 480px) --- */
 @media (max-width: 480px) {
   header {
     padding: 1% 5%;
@@ -376,7 +370,7 @@ nav img {
     height: 200px;
   }
 
-  /* Footer */
+
   .footer-boxes {
     flex-direction: column;
     gap: 20px;
@@ -388,7 +382,6 @@ nav img {
   }
 }
 
-/* --- Tablet (up to 768px) --- */
 @media (max-width: 768px) {
   .text-box h1 {
     font-size: 36px;
@@ -428,7 +421,7 @@ nav img {
   }
 }
 
-/* --- Tablet Landscape (up to 1024px) --- */
+
 @media (max-width: 1024px) {
   .text-box h1 {
     font-size: 42px;
@@ -459,7 +452,7 @@ nav img {
   }
 }
 
-/* --- Desktop (above 1024px) --- */
+
 @media (min-width: 1025px) {
   .text-box h1 {
     font-size: 50px;

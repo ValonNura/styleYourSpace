@@ -213,7 +213,7 @@
     </script>
     <script>
     $(document).ready(function() {
-        // Hover effect with scale and shadow
+       
         $('.service-card').hover(
             function() {
                 $(this).css({
@@ -231,15 +231,15 @@
             }
         );
 
-        // Click to show more details
+       
         $('.service-card').click(function() {
-            // Store the current card
+           
             const card = $(this);
             
-            // Get the service title
+           
             const serviceTitle = card.find('h3').text();
             
-            // Create custom messages for each service
+           
             const serviceDetails = {
                 'Free Delivery': 'We offer complimentary delivery for orders above $500. Delivery usually takes 3-5 business days.',
                 'Assembly Service': 'Our professional team will assemble your furniture with care and precision.',
@@ -251,7 +251,7 @@
                 'Flexible Payment': 'Choose from various payment plans including installments.'
             };
 
-            // Show alert with detailed information
+           
             alert(`${serviceTitle}\n\n${serviceDetails[serviceTitle]}`);
         });
     });

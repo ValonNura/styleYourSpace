@@ -5,8 +5,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-
-/* Navbar */
 .header {
   
     position: relative;
@@ -60,10 +58,6 @@ nav img {
 .nav-links ul li:hover::after {
     width: 100%;
 }
-
-/* .main-nav-link.nav-cta:hover {
-      background-color: #d5d4d6;
-  } */
 
 .home-section {
     display: flex;
@@ -152,8 +146,6 @@ nav img {
     opacity: 50%;
 }
 
-
-/* footer updated */
 .footer {
     background-color: #e2dbd3;
     color: #333;
@@ -490,7 +482,7 @@ nav img {
 
 .service-card i {
   font-size: 3rem;
-  color: #8f8383; /* You can change this to match your website's color scheme */
+  color: #8f8383; 
   margin-bottom: 1rem;
 }
 
@@ -505,9 +497,6 @@ nav img {
   line-height: 1.6;
 }
 
-
-
-/* --- Mobile Devices (up to 768px) --- */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -598,7 +587,6 @@ nav img {
   }
 }
 
-/* --- Tablets (up to 1024px) --- */
 @media (max-width: 1024px) {
   header {
     padding: 1% 4%;
@@ -638,7 +626,6 @@ nav img {
   }
 }
 
-/* --- Large Screens (above 1024px) --- */
 @media (min-width: 1025px) {
   header {
     padding: 1% 5%;
@@ -667,7 +654,6 @@ nav img {
   }
 }
 
-/* --- Extra Small Devices (up to 480px) --- */
 @media (max-width: 480px) {
   header .logo {
     font-size: 1.2rem;

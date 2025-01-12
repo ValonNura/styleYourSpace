@@ -4,14 +4,13 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-/* container */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 auto;
 }
 
-/* Navbar */
 .header {
 
     position: relative;
@@ -66,9 +65,6 @@ nav img {
     width: 100%;
 }
 
-
-
-/* Hero Section */
 .hero {
     background: url('../img/blog1.jpg') no-repeat center center/cover;
     height: 500px;
@@ -107,7 +103,6 @@ nav img {
     background: #e76f51;
 }
 
-/* Blog Section */
 .blog-posts {
     padding: 60px 0;
     background: #fff;
@@ -175,7 +170,7 @@ nav img {
     background: #e76f51;
 }
 
-/* footer */
+
 .footer {
     background-color: #e2dbd3;
     color: #333;
@@ -276,7 +271,7 @@ nav img {
     text-align: center;
 }
 
-/* --- Mobile (up to 480px) --- */
+
 @media (max-width: 480px) {
     .hero h1 {
       font-size: 32px;
@@ -333,7 +328,6 @@ nav img {
     }
   }
   
-  /* --- Tablet (up to 768px) --- */
   @media (max-width: 768px) {
     .hero h1 {
       font-size: 36px;
@@ -381,7 +375,7 @@ nav img {
     }
   }
   
-  /* --- Tablet Landscape (up to 1024px) --- */
+
   @media (max-width: 1024px) {
     .hero h1 {
       font-size: 42px;
@@ -430,7 +424,7 @@ nav img {
     }
   }
   
-  /* --- Desktop (above 1024px) --- */
+
   @media (min-width: 1025px) {
     .hero h1 {
       font-size: 48px;

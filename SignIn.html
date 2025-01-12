@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       
-      <!-- Login Form -->
+      
       <div class="form-container" id="loginForm">
         <h2>Log in</h2>
         <form onsubmit="return validateLogin()">
@@ -40,14 +40,14 @@
         <div class="social-login">
           <p>Or log in with:</p>
           <div>
-            <!-- Facebook Login Button -->
+          
             <button
               class="social-btn facebook"
               onclick="redirectTo('https://www.facebook.com/login')"
             >
               Facebook
             </button>
-            <!-- Google Login Button -->
+        
             <button
               class="social-btn google"
               onclick="redirectTo('https://accounts.google.com/signin')"
@@ -58,7 +58,6 @@
         </div>
       </div>
 
-      <!-- Signup Form -->
       <div class="form-container hidden" id="signupForm">
         <h2>Sign up</h2>
         <form onsubmit="return validateSignup()">
@@ -88,6 +87,7 @@
             minlength="8"
             title="Password must be at least 8 characters long"
           />
+          
           <button type="submit" class="animated-button">Sign up</button>
         </form>
         <p>
