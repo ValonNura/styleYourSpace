@@ -17,9 +17,8 @@
 }
 
 body {
-  background-color: #f9f9f9;
-
-
+  background-color: #EEEEEE;
+  
 }
 
 nav {
@@ -34,7 +33,7 @@ nav {
 }
 
 nav img {
-  width: 150 px;
+  width: 150px;
 }
 
 .nav-links {
@@ -63,7 +62,7 @@ nav img {
   background: #fff;
   display: block;
   margin: auto;
-  transition: 0.5;
+  transition: 0.5s;
 
 }
 
@@ -78,8 +77,9 @@ main {
   margin-top: 2rem;
 }
 
+
 .products-title {
-  width: 90%;
+  width: 100%;
   color: #ffffff;
   position: absolute;
   top: 60%;
@@ -89,7 +89,7 @@ main {
   font-size: 50px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  /* Fonti */
+ 
 }
 
 .bestseller-label {
@@ -122,54 +122,83 @@ main {
 
 .products {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem; 
   flex-wrap: wrap;
+  
 }
 
 .product {
-  background: #fff;
+  background: #ebe8e5;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  flex: 1 1 calc(33.333% - 1.5rem);
-  max-width: calc(33.333% - 1.5rem);
+  padding:0;
+  flex: 1 1 calc(50% - 0.5rem); 
+  max-width: calc(50% - 0.5rem); 
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   position: relative;
+ 
 }
 
 .product:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  border-color: #aaa;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #ccc;
   background-color: #f9f9f9;
   color: #333;
 }
 
+
 .product img {
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
+  max-height:500px;
+  object-fit:cover;
   transition: transform 0.3s;
 }
 
-.product:hover img {
-  transform: scale(1.1);
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-container:hover img.default {
+  opacity: 0;
+}
+
+.image-container:hover img.hover {
+  opacity: 1;
 }
 
 .product h4 {
+  padding-left: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
+  font-weight:500;
   color: #555;
-  margin: 0.5rem 0;
+  margin-top:10px;
 }
 
 .product .dimensions {
+  padding-left: 20px;
   font-size: 0.875rem;
   color: #777;
+  float:left;
 }
 
 .product .price {
+  padding-right: 20px;
+  text-align: right;
   font-size: 1rem;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
@@ -177,13 +206,19 @@ main {
 }
 
 .product .old-price {
+  color: #c62606;
   text-decoration: line-through;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
 }
 
+.product .stars {
+  padding-right: 20px;
+  text-align: right;
+  color: #5d5c5c;
+  padding-bottom:5px;
+}
 
-/* footer updated */
 .footer {
   background-color: #e2dbd3;
   color: #333;
@@ -284,7 +319,6 @@ main {
   text-align: center;
 }
 
-/* filter css */
 
 .filter-container {
   max-width: 1200px;
@@ -371,7 +405,7 @@ main {
   margin: 0 auto;
   padding: 20px;
 }
-/* --- Mobile (up to 480px) --- */
+
 @media (max-width: 480px) {
   .header {
     min-height: 300px;
@@ -430,7 +464,7 @@ main {
   }
 }
 
-/* --- Mobile (up to 480px) --- */
+
 @media (max-width: 480px) {
   .header {
     min-height: 300px;
@@ -482,7 +516,7 @@ main {
 }
 
 
-/* --- Tablet (up to 768px) --- */
+
 @media (max-width: 768px) {
   .header {
     min-height: 400px;
@@ -524,7 +558,7 @@ main {
   }
 }
 
-/* --- Tablet Landscape (up to 1024px) --- */
+
 @media (max-width: 1024px) {
   .products-title {
     font-size: 45px;
@@ -544,7 +578,7 @@ main {
   }
 }
 
-/* --- Desktop (above 1024px) --- */
+
 @media (min-width: 1025px) {
   .product {
     flex-basis: 30%;
