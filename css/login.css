@@ -138,7 +138,6 @@ body {
     display: none;
   }
   
-  /* Small Devices: Mobile */
 @media (max-width: 480px) {
   
   .container {
@@ -159,7 +158,6 @@ body {
   }
 }
 
-/* Medium Devices: Tablets and Small Screens */
 @media (max-width: 768px) {
   .container {
     max-width: 80%;
@@ -178,7 +176,6 @@ body {
   }
 }
 
-/* Large Devices: Desktops */
 @media (min-width: 1024px) {
   .container {
     max-width: 450px;
@@ -198,7 +195,6 @@ body {
   }
 }
 
-/* Large Screens */
 @media (min-width: 1025px) {
   .container {
     max-width: 500px;

@@ -83,9 +83,6 @@ nav img {
   color: #494242;
 }
 
-
-/*----Our Company----*/
-
 .intro-section {
   display: flex;
   align-items: center;
@@ -96,7 +93,6 @@ nav img {
   margin: 0;
 
 }
-
 
 .intro-section img {
   border-radius: 5px;
@@ -114,7 +110,6 @@ nav img {
   margin: 0;
   color: #343333;
 }
-
 
 .our-company {
   width: 80%;
@@ -173,7 +168,6 @@ h3 {
 
 }
 
-/*-----Company----*/
 .Company {
   width: 80%;
   margin: auto;
@@ -274,7 +268,6 @@ h3 {
   color: #f44336;
 }
 
-/*---contact us---*/
 .a {
   margin: 00px auto;
   width: 80%;
@@ -308,7 +301,6 @@ h3 {
   transition: all 0.3s ease;
 }
 
-
 #redirectButton:hover {
   background-color: #dbe5ef;
   color: #494242;
@@ -316,7 +308,6 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* footer updated */
 .footer {
   background-color: #e2dbd3;
   color: #333;
@@ -417,8 +408,6 @@ h3 {
   text-align: center;
 }
 
-
-/* --- Mobile Devices (up to 768px) --- */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -494,7 +483,6 @@ h3 {
   }
 }
 
-/* --- Tablets (up to 1024px) --- */
 @media (max-width: 1024px) {
   nav {
     padding: 1% 4%;
@@ -521,7 +509,7 @@ h3 {
   }
 }
 
-/* --- Large Screens (above 1024px) --- */
+
 @media (min-width: 1025px) {
   .intro-section img {
     width: 40%;
@@ -532,7 +520,7 @@ h3 {
     flex-basis: 30%;
   }
 }
-/* --- Mobile Devices (up to 480px) --- */
+
 @media (max-width: 480px) {
   nav {
     flex-direction: column;

@@ -17,8 +17,12 @@
 }
 
 body {
+<<<<<<< HEAD
   background-color: #EEEEEE;
   
+=======
+  background-color: #f9f9f9;
+>>>>>>> 1e40be8afdb4287379696664154ae4cbed4a1d1e
 }
 
 nav {
@@ -27,9 +31,6 @@ nav {
   padding: 2% 6%;
   justify-content: space-between;
   align-items: center;
-
-
-
 }
 
 nav img {
@@ -464,7 +465,10 @@ main {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e40be8afdb4287379696664154ae4cbed4a1d1e
 @media (max-width: 480px) {
   .header {
     min-height: 300px;
@@ -516,7 +520,10 @@ main {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e40be8afdb4287379696664154ae4cbed4a1d1e
 @media (max-width: 768px) {
   .header {
     min-height: 400px;
@@ -558,7 +565,10 @@ main {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e40be8afdb4287379696664154ae4cbed4a1d1e
 @media (max-width: 1024px) {
   .products-title {
     font-size: 45px;
@@ -578,7 +588,10 @@ main {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e40be8afdb4287379696664154ae4cbed4a1d1e
 @media (min-width: 1025px) {
   .product {
     flex-basis: 30%;
