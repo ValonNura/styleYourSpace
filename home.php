@@ -23,16 +23,17 @@
         <div class="nav-links" id="navLinks">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contactus.html">Contact us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="SignIn.html">Sign in</a></li>
+            <li><a href="aboutus.php">About us</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="contactus.php">Contact us</a></li>
+            <li><a href="blog.php">Blog</a></li>
+            <li><a href="SignIn.php">Sign in</a></li>
           </ul>
         </div>
       </nav>
     </section>
     
+
     <div class="slick-container">
       <div class="slider-item">
         <img src="img/h8.png" alt="" />

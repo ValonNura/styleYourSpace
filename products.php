@@ -16,12 +16,12 @@
         <nav> 
             <div class="nav-links" id="navLinks">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="aboutus.html" >About us</a></li>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="aboutus.php" >About us</a></li>
                     <li><a href="#">Products</a></li>
-                    <li><a href="contactus.html">Contact us</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="SignIn.html">Sign in</a></li>
+                    <li><a href="contactus.php">Contact us</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
 
                 </ul>
             </div>

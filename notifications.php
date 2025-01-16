@@ -12,12 +12,12 @@
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <ul>
-            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
             <li><a href="#furniture"><i class="fas fa-couch"></i> Furniture</a></li>
-            <li><a href="orders.html"><i class="fas fa-box"></i> Orders</a></li>
-            <li><a href="profile.html"><i class="fas fa-user-cog"></i> Account Settings</a></li>
-            <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
-            <li><a href="notifications.html" class="active"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="orders.php"><i class="fas fa-box"></i> Orders</a></li>
+            <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+            <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
+            <li><a href="notifications.php" class="active"><i class="fas fa-bell"></i> Notifications</a></li>
         </ul>
     </div>
 

@@ -6,6 +6,7 @@
     <title>Log in</title>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="icon" href="img/favicon-32x32.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <div class="container">
@@ -13,24 +14,10 @@
       
       <div class="form-container" id="loginForm">
         <h2>Log in</h2>
-        <form onsubmit="return validateLogin()">
+        <form action="SignIn.php" method="POST">
           <div id="loginError" class="error-message"></div>
-          <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email"
-            required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            title="Please enter a valid email address (e.g., user@example.com)"
-          />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-            required
-            minlength="8"
-            title="Password must be at least 8 characters long"
-          />
+          <input type="email" id="loginEmail" name="loginEmail" placeholder="Email" required />
+          <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required />
           <button type="submit" class="animated-button">Log in</button>
         </form>
         <p>
@@ -102,5 +89,50 @@
       }
     </script>
     <script src="script.js"></script>
+    <?php
+    require_once 'Database.php'; 
+
+    session_start(); 
+
+    $db = new Database('localhost', 'projektifinal', 'root', 'loni1234');
+    $connection = $db->connect();
+
+    if (!$connection) {
+        die("Database connection failed.");
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $email = $_POST['loginEmail'];
+        $password = $_POST['loginPassword'];
+
+        var_dump($email, $password); 
+
+        $stmt = $connection->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        
+        if (!$stmt->execute()) {
+            die("Query execution failed: " . implode(", ", $stmt->errorInfo()));
+        }
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        var_dump($user); 
+        if ($user && $user['password'] === $password) {
+            $_SESSION['user_role'] = $user['role'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_email'] = $user['email'];
+            if ($user['role'] === 'admin') {
+                header('Location: dashboard.php');
+                exit();
+            } else {
+                header('Location: home.php');
+                exit(); 
+            }
+        } else {
+            echo "<script>document.getElementById('loginError').innerText = 'Invalid credentials';</script>";
+            
+        }
+    }
+    ?>
   </body>
 </html>
