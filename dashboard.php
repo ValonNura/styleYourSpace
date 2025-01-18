@@ -19,7 +19,7 @@
             <li><a href="orders.php"><i class="fas fa-box"></i> Orders</a></li>
             <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
             <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
-            <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
         </ul>
     </div>
     
@@ -36,7 +36,6 @@
                 </a>
                 <button onclick="window.location.href='logout.php'" class="logout-btn">Logout</button>
             </div>
-        </header>
         </header>
 
         <section id="design-ideas" class="dashboard-section">

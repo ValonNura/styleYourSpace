@@ -18,7 +18,7 @@
             <li><a href="orders.php" class="active"><i class="fas fa-box"></i> Orders</a></li>
             <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
             <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
-            <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
         </ul>    
 
     </div>
@@ -31,10 +31,10 @@
                     <img src="img/pfp.jpg" alt="Profile" class="profile-img">
                     <span>Your Profile</span>
                 </a>
-                <button class="logout-btn">Log Out</button>
-            </div>
-    
+                <button onclick="window.location.href='logout.php'" class="logout-btn">Logout</button>
+            </div> 
         </header>
+
         <section class="filters">
             <div class="filters-container">
             <input type="text" class="search-bar" placeholder="Customer name or order ID">

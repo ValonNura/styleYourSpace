@@ -174,7 +174,7 @@
     <script>
       const button = document.getElementById('redirectButton');
       button.addEventListener('click', function () {
-        window.location.href = 'Contactus.html'; 
+        window.location.href = 'Contactus.php'; 
       });
     </script>
 

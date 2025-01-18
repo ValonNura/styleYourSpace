@@ -14,3 +14,12 @@ INSERT INTO users_data (username, password, email) VALUES ('jane_smith', 'mypass
 INSERT INTO users_data (username, password, email) VALUES ('alice_jones', 'alice2023', 'alice.jones@example.com');
 INSERT INTO users_data (username, password, email) VALUES ('bob_brown', 'bobspassword', 'bob.brown@example.com');
 INSERT INTO users_data (username, password, email) VALUES ('charlie_white', 'charliepass', 'charlie.white@example.com');
+
+
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL
+);
+
