@@ -46,34 +46,37 @@
       </div>
 
       <div class="form-container hidden" id="signupForm">
-        <h2>Sign up</h2>
-        <form onsubmit="return validateSignup()">
-          <div id="signupError" class="error-message"></div>
-          <input type="text" id="signupName" placeholder="Full Name" required />
-          <input
-            type="email"
-            id="signupEmail"
-            placeholder="Email"
-            required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            title="Please enter a valid email address (e.g., user@example.com)"
-          />
-          <input
-            type="password"
-            id="signupPassword"
-            placeholder="Password"
-            required
-            minlength="8"
-            title="Password must be at least 8 characters long"
-          />
-          <input
-            type="password"
-            id="signupConfirmPassword"
-            placeholder="Confirm Password"
-            required
-            minlength="8"
-            title="Password must be at least 8 characters long"
-          />
+      <h2>Sign up</h2>
+  <form method="POST" action="signup.php" onsubmit="return validateSignup()">
+    <div id="signupError" class="error-message"></div>
+    <input type="text" id="signupName" name="signupName" placeholder="Full Name" required />
+    <input
+      type="email"
+      id="signupEmail"
+      name="signupEmail"
+      placeholder="Email"
+      required
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      title="Please enter a valid email address (e.g., user@example.com)"
+    />
+    <input
+      type="password"
+      id="signupPassword"
+      name="signupPassword"
+      placeholder="Password"
+      required
+      minlength="8"
+      title="Password must be at least 8 characters long"
+    />
+    <input
+      type="password"
+      id="signupConfirmPassword"
+      name="signupConfirmPassword"
+      placeholder="Confirm Password"
+      required
+      minlength="8"
+      title="Password must be at least 8 characters long"
+    />
           
           <button type="submit" class="animated-button">Sign up</button>
         </form>
@@ -89,25 +92,21 @@
       }
     </script>
     <script src="script.js"></script>
+
+
     <?php
-    require_once 'Database.php'; 
+      require_once 'database.php'; 
 
-    session_start(); 
+    class User {
+      private $connection;
 
-    $db = new Database('localhost', 'projektifinal', 'root', 'loni1234');
-    $connection = $db->connect();
-
-    if (!$connection) {
-        die("Database connection failed.");
+    public function __construct($db) {
+        $this->connection = $db;
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $email = $_POST['loginEmail'];
-        $password = $_POST['loginPassword'];
-
-        var_dump($email, $password); 
-
-        $stmt = $connection->prepare("SELECT * FROM users WHERE email = :email");
+    public function login($email, $password) {
+      
+        $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email);
         
         if (!$stmt->execute()) {
@@ -115,12 +114,18 @@
         }
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$user) {
+            return "User not found.";
+        }
 
-        var_dump($user); 
-        if ($user && $user['password'] === $password) {
+        if (password_verify($password, $user['password'])) {
+          
             $_SESSION['user_role'] = $user['role'];
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
+
+            
             if ($user['role'] === 'admin') {
                 header('Location: dashboard.php');
                 exit();
@@ -129,10 +134,34 @@
                 exit(); 
             }
         } else {
-            echo "<script>document.getElementById('loginError').innerText = 'Invalid credentials';</script>";
-            
+            return "Invalid password.";
         }
     }
-    ?>
+}
+
+session_start(); 
+
+$db = new Database('localhost', 'projekti', 'root', '');
+$connection = $db->connect();
+
+if (!$connection) {
+    die("Database connection failed.");
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   
+    $email = $_POST['loginEmail'];
+    $password = $_POST['loginPassword'];
+
+    $user = new User($connection);
+
+    $error = $user->login($email, $password);
+
+    if ($error) {
+        echo "<script>document.getElementById('loginError').innerText = '$error';</script>";
+    }
+}
+?>
+
   </body>
 </html>
