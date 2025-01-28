@@ -21,7 +21,6 @@
         </ul>
     </div>
 
-  
     <div class="main-content">
         <header>
             <h1>Analytics</h1>
@@ -51,6 +50,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Grafiku i të ardhurave (dummy data)
         const revenueCtx = document.getElementById('revenueChart').getContext('2d');
         new Chart(revenueCtx, {
             type: 'line',
@@ -69,22 +69,53 @@
             }
         });
 
+        // Grafiku i rritjes së përdoruesve (dinamik me të dhënat reale)
         const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
-        new Chart(userGrowthCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'New Users',
-                    data: [50, 75, 100, 125, 150, 200],
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                    borderColor: 'rgba(153, 102, 255, 1)'
-                }]
-            },
-            options: {
-                responsive: true
-            }
-        });
+
+        fetch('get_subscriber_growth.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error('Error fetching subscriber data:', data.error);
+                    return;
+                }
+
+                const labels = data.map(item => item.month); // Muajt
+                const values = data.map(item => item.total); // Numri total i subscribers për çdo muaj
+
+                new Chart(userGrowthCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'New Subscribers',
+                            data: values,
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Month'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Subscribers'
+                                },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error:', error));
     </script>
 </body>
 </html>
