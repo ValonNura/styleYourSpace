@@ -181,11 +181,12 @@
         </div>
         <div class="footer-box">
           <h4>Subscribe to our newsletter</h4>
-          <p>Subscribe for exclusive deals and updates!</p>
-          <form class="newsletter" action="#">
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
-          </form>
+            <p>Subscribe for exclusive deals and updates!</p>
+              <form class="newsletter" action="subscribe.php" method="POST">
+             <input type="email" name="email" placeholder="Enter your email" required />
+             <button type="submit">Subscribe</button>
+         </form>
+        </div>
         </div>
       </div>
       <p>&copy; 2024 Style Your Space. All rights reserved.</p>
