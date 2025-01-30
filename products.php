@@ -2,8 +2,6 @@
 require_once 'database.php';
 require_once 'Product.php'; 
 
-
-
 $productHandler = new Product();
 
 $category = isset($_GET['category']) ? $_GET['category'] : 'all';
@@ -42,19 +40,19 @@ $products = $productHandler->getProducts($category, $sort);
     <div class="container">
         <div class="filter-container">
             <div class="filter-buttons">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="bestseller">Best Sellers</button>
-            <button class="filter-btn" data-filter="sale">On Sale</button>
-                        </div>
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bestseller">Best Sellers</button>
+                <button class="filter-btn" data-filter="sale">On Sale</button>
+            </div>
             <div class="sort-options">
-                <select id="sort-select" onchange="sortProducts(this.value)">
+                <select id="sort-select">
                     <option value="">Sort by</option>
                     <option value="name-asc">Name (A-Z)</option>
                     <option value="name-desc">Name (Z-A)</option>
                     <option value="price-asc">Price (Low to High)</option>
                     <option value="price-desc">Price (High to Low)</option>
                 </select>
-                <select id="categorySelect" onchange="filterByCategory(this.value)">
+                <select id="categorySelect">
                     <option value="all">All Categories</option>
                     <option value="lighting">Lighting</option>
                     <option value="beds">Beds</option>

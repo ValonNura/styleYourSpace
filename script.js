@@ -74,10 +74,7 @@ function toggleMenu() {
 }
 
 // ----------------------------------------------------------------------
-
-
-
-// filter of products
+// Filtering products
 
 function filterProducts(category) {
   const products = document.querySelectorAll(".product");
@@ -113,9 +110,7 @@ function filterProducts(category) {
       } else {
         product.style.display = "none";
       }
-    }
-    // Handle category filtering
-    else {
+    } else {
       const productCategory = product.getAttribute("data-category");
       if (productCategory === category) {
         product.style.display = "block";
@@ -126,51 +121,26 @@ function filterProducts(category) {
   });
 }
 
-// Function for category dropdown
+// Function for category dropdown filtering
 function filterByCategory(category) {
-  const sections = document.querySelectorAll('.category');
-  
-  sections.forEach(section => {
-    if (category === 'all') {
-      section.style.display = 'block';
+  const products = document.querySelectorAll(".product");
+
+  products.forEach((product) => {
+    const productCategory = product.getAttribute("data-category");
+
+    if (category === "all" || productCategory === category) {
+      product.style.display = "block";
     } else {
-      if (section.id === category) {
-        section.style.display = 'block';
-      } else {
-        section.style.display = 'none';
-      }
+      product.style.display = "none";
     }
   });
 }
 
-// Add event listeners when document is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  // Filter buttons event listeners
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const category = this.getAttribute("data-filter");
-      filterProducts(category);
-    });
-  });
-
-  // Category dropdown event listener
-  const categorySelect = document.getElementById("categorySelect");
-  if (categorySelect) {
-    categorySelect.addEventListener("change", function () {
-      console.log("Dropdown changed to:", this.value); // Debug log
-      filterByCategory(this.value);
-    });
-  }
-
-  // Show all products by default
-  filterProducts("all");
-});
-
+// Sorting function
 function sortProducts(sortType) {
-    const productsContainer = document.querySelector('.container');
+    const productsContainer = document.querySelector('.products');
     const products = Array.from(productsContainer.getElementsByClassName('product'));
-    
+
     products.sort((a, b) => {
         switch(sortType) {
             case 'price-asc':
@@ -185,30 +155,18 @@ function sortProducts(sortType) {
                 return 0;
         }
     });
-    
-    // Find or create a container for all products
-    let allProductsContainer = document.querySelector('.all-products');
-    if (!allProductsContainer) {
-        allProductsContainer = document.createElement('div');
-        allProductsContainer.className = 'products all-products';
-        productsContainer.appendChild(allProductsContainer);
-    }
-    
-    // Hide category sections and show all products in one container
-    const categorySections = document.querySelectorAll('.category');
-    categorySections.forEach(section => section.style.display = 'none');
-    
-    allProductsContainer.innerHTML = '';
+
+    // Clear and re-append sorted products
+    productsContainer.innerHTML = ''; 
     products.forEach(product => {
-        allProductsContainer.appendChild(product.cloneNode(true));
+        productsContainer.appendChild(product);
     });
 }
 
 // Helper function to get the price value
 function getPrice(productElement) {
     const priceText = productElement.querySelector('.price').textContent;
-    // Extract the current price (after discount if exists)
-    const price = priceText.split('$').pop().trim();
+    const price = priceText.replace('$', '').trim();
     return parseFloat(price);
 }
 
@@ -217,28 +175,48 @@ function getName(productElement) {
     return productElement.querySelector('h4').textContent.trim();
 }
 
-// Add event listener for the sort select
-document.addEventListener("DOMContentLoaded", function() {
-    const sortSelect = document.getElementById('sort-select');
-    if (sortSelect) {
-        sortSelect.addEventListener('change', function() {
-            sortProducts(this.value);
-        });
-    }
+// Event Listeners for Filters and Sorting
+document.addEventListener("DOMContentLoaded", function () {
+  // Filter buttons
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const category = this.getAttribute("data-filter");
+      filterProducts(category);
+    });
+  });
+
+  // Category dropdown filter
+  const categorySelect = document.getElementById("categorySelect");
+  if (categorySelect) {
+    categorySelect.addEventListener("change", function () {
+      console.log("Filtering by category:", this.value);
+      filterByCategory(this.value);
+    });
+  }
+
+  // Sorting dropdown event listener
+  const sortSelect = document.getElementById("sort-select");
+  if (sortSelect) {
+    sortSelect.addEventListener("change", function () {
+      sortProducts(this.value);
+    });
+  }
+
+  // Apply initial filters on page load
+  filterByCategory("all"); 
+  sortProducts(document.getElementById("sort-select").value);
 });
 
-
-
+// Toggle menu function for responsive navigation
 function toggleMenu() {
   const navLinks = document.getElementById('navLinks');
   navLinks.classList.toggle('active');
 }
+
 const hamburger = document.getElementById('hamburger-icon');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
-
-
-
