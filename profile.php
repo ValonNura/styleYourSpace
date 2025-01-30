@@ -2,29 +2,18 @@
 require_once 'database.php';
 require_once 'userContactManager.php';
 require_once 'subscribe.php';
+require_once 'profilecontroller.php';
 
 session_start();
 
-// Krijimi i lidhjes së bazës së të dhënave dhe kalimi i tij në konstruktues
 $db = new Database('localhost', 'projekti', 'root', '');
 
-// Krijimi i objekteve të menaxhimit të përdoruesve dhe mesazheve
 $userManager = new User($db->connect());
 $contactMessageManager = new ContactMessage($db->connect());
 
-// Funksionaliteti për fshirjen e mesazheve
-if (isset($_GET['delete_message_id'])) {
-    $messageId = $_GET['delete_message_id'];
-    $result = $contactMessageManager->deleteMessage($messageId);
+$controller = new ProfileController($userManager, $contactMessageManager);
 
-    // Kthejmë një përgjigje JSON që do të përdoret nga JavaScript
-    echo json_encode(['status' => $result ? 'success' : 'failure']);
-    exit();
-}
-
-// Marrja e të dhënave
-$totalUsers = $userManager->getTotalUsers();
-$recentMessages = $contactMessageManager->getRecentMessages();
+list($totalUsers, $recentMessages) = $controller->handleRequest();
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +27,6 @@ $recentMessages = $contactMessageManager->getRecentMessages();
 </head>
 <body>
 
-<!-- Sidebar dhe seksioni i profilit -->
 <div class="sidebar">
     <h2>Admin Dashboard</h2>
     <ul>

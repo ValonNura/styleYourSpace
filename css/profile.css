@@ -78,6 +78,7 @@ body {
     position: absolute; 
     right: 20px; 
     gap: 10px;
+    top: 10px;
 }
 
 .profile-btn {
