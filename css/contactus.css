@@ -382,45 +382,6 @@ nav img {
   }
 }
 
-@media (max-width: 768px) {
-  .text-box h1 {
-    font-size: 36px;
-  }
-
-  nav {
-    flex-direction: column;
-    padding: 5% 3%;
-  }
-
-  .nav-links ul li {
-    padding: 12px 10px;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .contact-form,
-  .contact-info {
-    max-width: 100%;
-    min-width: 100%;
-  }
-
-  .footer-boxes {
-    flex-direction: column;
-  }
-
-  .newsletter input,
-  .newsletter button {
-    width: 100%;
-  }
-
-  .map iframe {
-    height: 200px;
-  }
-}
-
 
 @media (max-width: 1024px) {
   .text-box h1 {

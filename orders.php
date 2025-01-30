@@ -14,12 +14,15 @@
         <h2>Admin Dashboard</h2>
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#furniture"><i class="fas fa-couch"></i> Furniture</a></li>
+            <li><a href="products.php"><i class="fas fa-couch"></i> Furniture</a></li>
             <li><a href="orders.php" class="active"><i class="fas fa-box"></i> Orders</a></li>
             <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+            <li><a href="add_product.php"><i class="fas fa-plus"></i>  New Product</a></li>
             <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
-        </ul>    
+            <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
+
+        </ul>       
 
     </div>
 

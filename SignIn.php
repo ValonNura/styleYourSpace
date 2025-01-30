@@ -1,3 +1,74 @@
+
+<?php
+      require_once 'database.php'; 
+
+    class User {
+      private $connection;
+
+    public function __construct($db) {
+        $this->connection = $db;
+    }
+
+    public function login($email, $password) {
+      session_start();
+      
+        $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        
+        if (!$stmt->execute()) {
+            die("Query execution failed: " . implode(", ", $stmt->errorInfo()));
+        }
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$user) {
+            return "User not found.";
+        }
+
+        if (password_verify($password, $user['password'])) {
+          
+            $_SESSION['user_role'] = $user['role'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_email'] = $user['email'];
+
+            
+            if ($user['role'] === 'admin') {
+                header('Location: dashboard.php');
+                exit();
+            } else {
+                header('Location: home.php');
+                exit(); 
+            }
+        } else {
+            return "Invalid password.";
+        }
+    }
+}
+
+session_start(); 
+
+$db = new Database('localhost', 'projekti', 'root', '');
+$connection = $db->connect();
+
+if (!$connection) {
+    die("Database connection failed.");
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   
+    $email = $_POST['loginEmail'];
+    $password = $_POST['loginPassword'];
+
+    $user = new User($connection);
+
+    $error = $user->login($email, $password);
+
+    if ($error) {
+        echo "<script>document.getElementById('loginError').innerText = '$error';</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -94,74 +165,6 @@
     <script src="script.js"></script>
 
 
-    <?php
-      require_once 'database.php'; 
-
-    class User {
-      private $connection;
-
-    public function __construct($db) {
-        $this->connection = $db;
-    }
-
-    public function login($email, $password) {
-      
-        $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = :email");
-        $stmt->bindParam(':email', $email);
-        
-        if (!$stmt->execute()) {
-            die("Query execution failed: " . implode(", ", $stmt->errorInfo()));
-        }
-
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        if (!$user) {
-            return "User not found.";
-        }
-
-        if (password_verify($password, $user['password'])) {
-          
-            $_SESSION['user_role'] = $user['role'];
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_email'] = $user['email'];
-
-            
-            if ($user['role'] === 'admin') {
-                header('Location: dashboard.php');
-                exit();
-            } else {
-                header('Location: home.php');
-                exit(); 
-            }
-        } else {
-            return "Invalid password.";
-        }
-    }
-}
-
-session_start(); 
-
-$db = new Database('localhost', 'projekti', 'root', '');
-$connection = $db->connect();
-
-if (!$connection) {
-    die("Database connection failed.");
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   
-    $email = $_POST['loginEmail'];
-    $password = $_POST['loginPassword'];
-
-    $user = new User($connection);
-
-    $error = $user->login($email, $password);
-
-    if ($error) {
-        echo "<script>document.getElementById('loginError').innerText = '$error';</script>";
-    }
-}
-?>
 
   </body>
 </html>

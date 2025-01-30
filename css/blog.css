@@ -22,7 +22,6 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    /* z-index: 1;   */
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -329,16 +328,23 @@ nav img {
   }
   
   @media (max-width: 768px) {
+    .nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: static;
+      padding: 10px 0;
+      background: transparent;
+    }
+    
     .hero h1 {
       font-size: 36px;
     }
   
     .hero p {
       font-size: 18px;
-    }
-  
-    .nav-links ul li {
-      padding: 14px 10px;
     }
   
     .blog-posts h2 {
@@ -374,6 +380,7 @@ nav img {
       font-size: 16px;
     }
   }
+  
   
 
   @media (max-width: 1024px) {

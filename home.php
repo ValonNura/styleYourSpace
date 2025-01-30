@@ -81,25 +81,25 @@
     </section>
 
     <section class="under-slider">
-      <div class="background-container">
-        <div class="order-furniture">
-          <h1>Ready to order the best furniture?</h1>
-          <a href="SignIn.html">
-            <button
-              class="discount"
-              type="button"
-              aria-label="Get a 50% discount by signing up"
-            >
-              Get a 50% discount
-            </button>
-          </a>
-          <p>Sign up now to get 50% off your order!</p>
-          <p class="testimonial">
-            "The best furniture deals in town!" - Happy Customer
-          </p>
-        </div>
-      </div>
-    </section>
+  <div class="background-container">
+    <div class="order-furniture">
+      <h1>Ready to order the best furniture?</h1>
+      <a href="SignIn.php">
+        <button
+          class="discount"
+          type="button"
+          aria-label="Get a 50% discount by signing up"
+        >
+          Get a 50% discount
+        </button>
+      </a>
+      <p>Sign up now to get 50% off your order!</p>
+      <p class="testimonial">
+        "The best furniture deals in town!" - Happy Customer
+      </p>
+    </div>
+  </div>
+</section>
 
     <section class="services">
       <h2>Our Services</h2>
