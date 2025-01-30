@@ -1,3 +1,19 @@
+<?php
+require_once 'database.php';
+require_once 'performanceAnalytics.php'; 
+$db = new Database('localhost', 'projekti', 'root', '');
+$connection = $db->connect();
+
+if (!$connection) {
+    die("Database connection failed.");
+}
+
+
+$analytics = new performanceAnalytics($connection);
+$revenueData = $analytics->getRevenueData();
+$userGrowthData = $analytics->getUserGrowthData();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +24,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <ul>
@@ -50,7 +65,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Grafiku i të ardhurave (dummy data)
         const revenueCtx = document.getElementById('revenueChart').getContext('2d');
         new Chart(revenueCtx, {
             type: 'line',
@@ -58,7 +72,7 @@
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                 datasets: [{
                     label: 'Revenue ($)',
-                    data: [1000, 2000, 1500, 3000, 2500, 4000],
+                    data: <?php echo json_encode($revenueData); ?>,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     tension: 0.4
@@ -69,53 +83,40 @@
             }
         });
 
-        // Grafiku i rritjes së përdoruesve (dinamik me të dhënat reale)
         const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
+        const userGrowthData = <?php echo json_encode($userGrowthData); ?>;
 
-        fetch('get_subscriber_growth.php')
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    console.error('Error fetching subscriber data:', data.error);
-                    return;
-                }
-
-                const labels = data.map(item => item.month); // Muajt
-                const values = data.map(item => item.total); // Numri total i subscribers për çdo muaj
-
-                new Chart(userGrowthCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'New Subscribers',
-                            data: values,
-                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                            borderColor: 'rgba(153, 102, 255, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Month'
-                                }
-                            },
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'Subscribers'
-                                },
-                                beginAtZero: true
-                            }
+        new Chart(userGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: userGrowthData.map(item => item.month + '/' + item.year), 
+                datasets: [{
+                    label: 'New Subscribers',
+                    data: userGrowthData.map(item => item.total),
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month/Year'
                         }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Subscribers'
+                        },
+                        beginAtZero: true
                     }
-                });
-            })
-            .catch(error => console.error('Error:', error));
+                }
+            }
+        });
     </script>
 </body>
 </html>

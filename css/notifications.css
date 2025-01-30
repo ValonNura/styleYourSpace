@@ -16,36 +16,37 @@ header {
 h1 {
     text-align: center;
     flex-grow: 1;
-}
-
-.profile {
+}.profile {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: absolute; 
     right: 20px;
+    gap: 10px;
 }
 
 .profile-btn {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 15px; 
     border-radius: 5px;
     color: #453d3c;
     text-decoration: none;
     transition: background-color 0.3s;
-    font-size: 14px;
+    font-size: 14px; 
+    height: 40px; 
     background-color: transparent;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap;
 }
 
 .profile-btn:hover {
-    background-color: #8c746a;
+    background-color: #8c746a; 
 }
 
 .logout-btn {
-    background-color: #796d6c;
-    border: 1px solid black;
-    padding: 10px 20px;
+    background-color: #796d6c; 
+    border: 1px solid black; 
+    padding: 10px 15px;
     border-radius: 5px;
     color: white;
     font-size: 14px;
@@ -53,15 +54,16 @@ h1 {
 }
 
 .logout-btn:hover {
-    background-color: #8c746a;
+    background-color: #8c746a; 
 }
 
 .profile-img {
-    width: 25px;
-    height: 25px;
+    width: 25px; 
+    height: 25px; 
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 10px; 
 }
+
 
 body {
     display: flex;
@@ -223,12 +225,14 @@ body {
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     transition: transform 0.2s;
 }
 
 .notification-card:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f9f7f4;
 }
 
 .card-header {

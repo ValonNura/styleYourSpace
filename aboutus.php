@@ -222,12 +222,7 @@
   <p>&copy; 2024 Style Your Space. All rights reserved.</p>
 </section>
 
-    <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.toggle("active");
-      }
-    </script>
+   
     <script src="js/script.js"></script>
 
   </body>

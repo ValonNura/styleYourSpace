@@ -25,104 +25,75 @@
         <header>
             <h1>Notifications</h1>
             <div class="profile">
-                <a href="profile.html" class="profile-btn">
+                <a href="profile.php" class="profile-btn">
                     <img src="img/pfp.jpg" alt="Profile" class="profile-img">
                     <span>Your Profile</span>
                 </a>
                 <button onclick="window.location.href='logout.php'" class="logout-btn">Logout</button>
             </div>
         </header>
-      
+
         <section id="notifications-section" class="dashboard-section">
-    <h2>Subscribers</h2>
-    <div id="subscriber-notifications" class="notifications-container"></div>
+            <h2>Subscribers</h2>
+            <div id="subscriber-notifications" class="notifications-container"></div>
 
-    <h2>Contacts</h2>
-    <div id="contact-notifications" class="notifications-container"></div>
-</section>
+            <h2>Contacts</h2>
+            <div id="contact-notifications" class="notifications-container"></div>
+        </section>
 
-<script>
-   
-    function fetchSubscribers() {
-        fetch('get_subscribers.php')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('subscriber-notifications');
-                if (data.error) {
-                    container.innerHTML = `<p>Error: ${data.error}</p>`;
-                } else {
-                    container.innerHTML = data.map(subscriber => `
-                        <div class="notification-card">
-                            <div class="card-header">
-                                <span class="type">Subscription</span>
-                                <span class="date">${new Date(subscriber.subscribed_at).toLocaleString()}</span>
+    </div>
+
+    <script>
+        class NotificationFetcher {
+            static fetchSubscribers() {
+                fetch('get_subscribers.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById('subscriber-notifications');
+                        container.innerHTML = data.map(subscriber => `
+                            <div class="notification-card">
+                                <div class="card-header">
+                                    <span class="type">Subscription</span>
+                                    <span class="date">${new Date(subscriber.subscribed_at).toLocaleString()}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>${subscriber.email}</strong> subscribed to the newsletter.</p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <p><strong>${subscriber.email}</strong> subscribed to the newsletter.</p>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            })
-            .catch(error => console.error('Error fetching subscribers:', error));
-    }
+                        `).join('');
+                    })
+                    .catch(error => console.error('Error fetching subscribers:', error));
+            }
 
-    function fetchContacts() {
-        fetch('get_contacts.php')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('contact-notifications');
-                if (data.error) {
-                    container.innerHTML = `<p>Error: ${data.error}</p>`;
-                } else {
-                    container.innerHTML = data.map(contact => `
-                        <div class="notification-card">
-                            <div class="card-header">
-                                <span class="type">Contact</span>
-                                <span class="date">${new Date(contact.created_at).toLocaleString()}</span>
+            static fetchContacts() {
+                fetch('get_contacts.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById('contact-notifications');
+                        container.innerHTML = data.map(contact => `
+                            <div class="notification-card">
+                                <div class="card-header">
+                                    <span class="type">Contact</span>
+                                    <span class="date">${new Date(contact.created_at).toLocaleString()}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>${contact.name}</strong> (${contact.email}): "${contact.message}"</p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <p><strong>${contact.name}</strong> (${contact.email}): "${contact.message}"</p>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            })
-            .catch(error => console.error('Error fetching contacts:', error));
-    }
+                        `).join('');
+                    })
+                    .catch(error => console.error('Error fetching contacts:', error));
+            }
+        }
 
-    setInterval(() => {
-        fetchSubscribers();
-        fetchContacts();
-    }, 10000);
+        setInterval(() => {
+            NotificationFetcher.fetchSubscribers();
+            NotificationFetcher.fetchContacts();
+        }, 10000);
 
-    fetchSubscribers();
-    fetchContacts();
-</script>
-        
-       
+        NotificationFetcher.fetchSubscribers();
+        NotificationFetcher.fetchContacts();
+    </script>
 
 </body>
 </html>
-
-<script>
-    function handleAction(action, target) {
-        switch(action) {
-            case 'view':
-                alert(`Viewing details for ${target}`);
-               
-                break;
-            case 'details':
-                alert(`Showing more details for ${target}`);
-             
-                break;
-            case 'track':
-                alert(`Tracking progress for ${target}`);
-             
-                break;
-            default:
-                alert('Action not recognized.');
-        }
-    }
-</script>
-

@@ -70,36 +70,54 @@ body {
     margin-left: 250px;
     padding: 20px;
     flex-grow: 1;
+
 }
-
-
+.profile {
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    right: 20px; 
+    gap: 10px;
+}
 
 .profile-btn {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 15px; 
     border-radius: 5px;
     color: #453d3c;
     text-decoration: none;
     transition: background-color 0.3s;
+    font-size: 14px; 
+    height: 40px; 
     background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap; 
 }
 
 .profile-btn:hover {
-    background-color: #8c746a;
+    background-color: #8c746a; 
 }
 
 .logout-btn {
-    background-color: #796d6c;
-    border: 1px solid black;
-    padding: 10px 20px;
+    background-color: #796d6c; 
+    border: 1px solid black; 
+    padding: 10px 15px;
     border-radius: 5px;
     color: white;
+    font-size: 14px;
     cursor: pointer;
 }
 
 .logout-btn:hover {
-    background-color: #8c746a;
+    background-color: #8c746a; 
+}
+
+.profile-img {
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%;
+    margin-right: 10px; 
 }
 
 .profile-settings {
@@ -115,15 +133,78 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
+/* Pjesa e mesazheve */
+.messages-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
 
+.message-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.message-item:hover {
+    transform: scale(1.02);
+}
+
+.message-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.message-body {
+    margin-top: 10px;
+    color: #555;
+}
+
+.message-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.delete-message {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.delete-message:hover {
+    background-color: #d32f2f;
+}
+
+.delete-message:active {
+    background-color: #c62828;
+}
+
+/* Për forma dhe inpute */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #3a3a3a;
+    font-weight: bold;
 }
 
 .form-group input {
@@ -131,81 +212,47 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
-.form-actions {
-    display: flex;
-    justify-content: space-between;
+.form-group input[readonly] {
+    background-color: #f9f9f9;
 }
 
-.save-btn,
-.reset-btn {
-    padding: 10px 20px;
-    border: none;
+input[readonly] {
+    background-color: #eae7e4;
+    cursor: not-allowed;
+}
+
+.delete-message-btn {
+    background-color: #4c4242;
+    color: white;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    font-size: 0.9em;
     transition: background-color 0.3s;
 }
 
-.save-btn {
-    background-color: #8c746a;
+.delete-message-btn:hover {
+    background-color: #4c4242;
+}
+
+button.delete-message {
+    background-color: #796969;
     color: white;
-}
-
-.save-btn:hover {
-    background-color: #b58e7d;
-}
-
-.reset-btn {
-    background-color: #945b55;
-    color: white;
-}
-
-.reset-btn:hover {
-    background-color: #944d4a;
-}
-
-.profile {
-    display: flex;
-    align-items: center; 
-    gap: 10px;
-    margin-left: auto; 
-}
-
-.profile-btn {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: #453d3c;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    background-color: transparent;
-    font-size: 14px;
-}
-
-.profile-btn:hover {
-    background-color: #8c746a;
-}
-
-.logout-btn {
-    background-color: #796d6c;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: white;
     cursor: pointer;
-    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.logout-btn:hover {
-    background-color: #8c746a;
+button.delete-message:hover {
+    background-color: #4c4242;
 }
 
-.profile-img {
-    width: 30px; 
-    height: 30px;
-    border-radius: 50%; 
-    margin-right: 8px;
-}
 
