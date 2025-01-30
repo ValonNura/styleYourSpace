@@ -39,7 +39,6 @@ list($totalUsers, $recentMessages) = $controller->handleRequest();
     </ul>
 </div>
 
-<!-- Main Content -->
 <div class="main-content">
     <header>
         <h1>Your Profile</h1>
