@@ -191,7 +191,6 @@ main {
   color: #777;
   float:left;
 }
-
 .product .price {
   padding-right: 20px;
   text-align: right;
@@ -199,23 +198,33 @@ main {
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
   color: #333;
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
 }
 
+.product .price-container {
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%; 
+}
 .product .old-price {
   color: #c62606;
   text-decoration: line-through;
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
+  margin-right: 0; 
+  font-size: 0.8rem;
+  line-height: 1.2; 
 }
 
 .product .stars {
-  padding-right: 20px;
+  padding-right: 0;
   text-align: right;
   color: #5d5c5c;
+  justify-content: flex-end; 
   padding-bottom:5px;
 }
-
-
 
 .footer {
   background-color: #e2dbd3;
