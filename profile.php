@@ -6,7 +6,7 @@ require_once 'profilecontroller.php';
 
 session_start();
 
-$db = new Database('localhost', 'projekti', 'root', '');
+$db = new Database('localhost', 'projekti', 'root', 'loni1234');
 
 $userManager = new User($db->connect());
 $contactMessageManager = new ContactMessage($db->connect());
