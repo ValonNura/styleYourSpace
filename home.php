@@ -18,19 +18,25 @@
   </head>
   <body>
     <section class="header">
-      <nav>
-       
-        <div class="nav-links" id="navLinks">
-          <ul>
-            <li><a href="#">Home</a></li>
+    <?php session_start(); ?>
+<nav>
+    <div class="nav-links" id="navLinks">
+        <ul>
+            <li><a href="index.php">Home</a></li>
             <li><a href="aboutus.php">About us</a></li>
             <li><a href="products.php">Products</a></li>
             <li><a href="contactus.php">Contact us</a></li>
             <li><a href="blog.php">Blog</a></li>
-            <li><a href="SignIn.php">Sign in</a></li>
-          </ul>
-        </div>
-      </nav>
+
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="SignIn.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="SignIn.php">Sign in</a></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</nav>
+
     </section>
     
 

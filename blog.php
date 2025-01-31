@@ -45,7 +45,7 @@
                   Explore the latest styles and ideas for transforming your
                   living space.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+                <a href="article/article1.php" class="read-more">Read More</a>
               </article>
 
               <article class="post">
