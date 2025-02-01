@@ -62,18 +62,8 @@ function validateSignup() {
     return false;
   }
 
-  alert("Signup successful!");
   return true;
 }
-
-function toggleMenu() {
-  if (window.innerWidth <= 768) {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("active");
-  }
-}
-
-//
 
 function filterProducts(category) {
   const products = document.querySelectorAll(".product");

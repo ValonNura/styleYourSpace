@@ -2,7 +2,7 @@
 session_start(); 
 require_once 'database.php'; 
 
-$db = new Database('localhost', 'projekti', 'root', 'loni1234');
+$db = new Database('localhost', 'projekti', 'root', '');
 $connection = $db->connect();
 
 if (!$connection) {

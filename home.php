@@ -22,7 +22,7 @@
 <nav>
     <div class="nav-links" id="navLinks">
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="aboutus.php">About us</a></li>
             <li><a href="products.php">Products</a></li>
             <li><a href="contactus.php">Contact us</a></li>
@@ -153,50 +153,59 @@
       </div>
     </section>
 
+
     <section class="footer">
-      <div class="footer-boxes">
-        <div class="footer-box">
-          <h4>Stay connected with us</h4>
-          <p>
-            Follow us on social media for the latest updates, inspiration, and
-            more!
-          </p>
+     <div class="footer-boxes">
+      <div class="footer-box">
+        <h4>Stay connected with us</h4>
+        <p>Follow us on social media for the latest updates, inspiration, and more!</p>
           <div class="icons">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              aria-label="Visit our Facebook page"
-            >
+            <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
               <i class="fab fa-facebook"></i>
             </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              aria-label="Visit our Instagram page"
-            >
+            <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
               <i class="fab fa-instagram"></i>
             </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              aria-label="Visit our LinkedIn page"
-            >
+            <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
         </div>
-        <div class="footer-box">
-          <h4>Subscribe to our newsletter</h4>
-            <p>Subscribe for exclusive deals and updates!</p>
-              <form class="newsletter" action="subscribe.php" method="POST">
-             <input type="email" name="email" placeholder="Enter your email" required />
-             <button type="submit">Subscribe</button>
-         </form>
-        </div>
+
+      <div class="footer-box">
+        <h4>Subscribe to our newsletter</h4>
+        <p>Subscribe for exclusive deals and updates!</p>
+          <form class="newsletter" id="subscribeForm">
+            <input type="email" name="email" id="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
-      <p>&copy; 2024 Style Your Space. All rights reserved.</p>
+
+      <div class="footer-bottom">
+        <p>© 2024 Style Your Space. All rights reserved.</p>
+      </div>
     </section>
+
+<script>
+    document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        var formData = new FormData(this);
+
+        fetch("subscribe.php", { 
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); 
+            document.getElementById("email").value = ""; 
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
