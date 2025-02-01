@@ -109,7 +109,6 @@
         .catch(error => console.error("Error:", error));
       });
 
-      // Contact form handler
       document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault();
         var formData = new FormData(this);

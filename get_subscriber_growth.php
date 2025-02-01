@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 class Database {
     private $servername = "localhost"; 
     private $username = "root"; 
-    private $password = "loni1234"; 
+    private $password = ""; 
     private $dbname = "projekti";
     private $conn;
 

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $db = new Database('localhost', 'projekti', 'root', 'loni1234');
+        $db = new Database('localhost', 'projekti', 'root', '');
         $connection = $db->connect();
         $subscriber = new Subscriber($connection);
         echo $subscriber->subscribe($email);

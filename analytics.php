@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'performanceAnalytics.php'; 
-$db = new Database('localhost', 'projekti', 'root', 'loni1234');
+$db = new Database('localhost', 'projekti', 'root', '');
 $connection = $db->connect();
 
 if (!$connection) {
@@ -34,6 +34,7 @@ $userGrowthData = $analytics->getUserGrowthData();
             <li><a href="add_product.php"><i class="fas fa-plus"></i>  New Product</a></li>
             <li><a href="analytics.php" class="active"><i class="fas fa-chart-line"></i> Analytics</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="user_management.php"><i class="fas fa-users"></i> User Management</a></li>
             <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
 
         </ul>    

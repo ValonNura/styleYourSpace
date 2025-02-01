@@ -6,7 +6,7 @@ class UserManagementApp {
     private $userManager;
 
     public function __construct() {
-        $database = new Database("localhost", "projekti", "root", "loni1234");
+        $database = new Database("localhost", "projekti", "root", "");
         $this->userManager = new User($database);
     }
 

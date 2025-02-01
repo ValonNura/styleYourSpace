@@ -9,7 +9,7 @@ class Product {
     private $db;
 
     public function __construct() {
-        $database = new Database('localhost', 'projekti', 'root', 'loni1234');
+        $database = new Database('localhost', 'projekti', 'root', '');
         $this->db = $database->connect();
 
        

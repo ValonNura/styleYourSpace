@@ -20,6 +20,7 @@
             <li><a href="add_product.php"><i class="fas fa-plus"></i>  New Product</a></li>
             <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="user_management.php"><i class="fas fa-users"></i> User Management</a></li>
             <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
 
         </ul>       
@@ -160,7 +161,7 @@
             </table>
         </section>
 
-        <!-- Modal for Order Details -->
+      
         <div class="modal" id="order-details">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeDetails()">&times;</span>

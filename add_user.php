@@ -2,7 +2,7 @@
 require_once "Database.php";
 require_once "User.php";
 
-$database = new Database("localhost", "projekti", "root", "loni1234");
+$database = new Database("localhost", "projekti", "root", "");
 $userManager = new User($database);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

@@ -6,7 +6,7 @@ require_once 'profilecontroller.php';
 
 session_start();
 
-$db = new Database('localhost', 'projekti', 'root', 'loni1234');
+$db = new Database('localhost', 'projekti', 'root', '');
 
 $userManager = new User($db->connect());
 $contactMessageManager = new ContactMessage($db->connect());
@@ -37,6 +37,7 @@ list($totalUsers, $recentMessages) = $controller->handleRequest();
             <li><a href="add_product.php"><i class="fas fa-plus"></i>  New Product</a></li>
             <li><a href="analytics.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="user_management.php"><i class="fas fa-users"></i> User Management</a></li>
             <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
 
         </ul>    
