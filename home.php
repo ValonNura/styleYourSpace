@@ -19,7 +19,11 @@
   <body>
     <section class="header">
     <?php session_start(); ?>
-<nav>
+    
+    <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </div>
     <div class="nav-links" id="navLinks">
         <ul>
             <li><a href="home.php">Home</a></li>
@@ -36,6 +40,7 @@
         </ul>
     </div>
 </nav>
+
 
     </section>
     
@@ -272,5 +277,11 @@
         });
     });
     </script>
+   <script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+    }
+</script>
+
   </body>
 </html>
