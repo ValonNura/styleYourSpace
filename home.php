@@ -46,7 +46,7 @@
         <div class="slider-content">
           <h1>Welcome to Style Your Space</h1>
           <p>Discover stunning interiors and unique ideas</p>
-          <a href="products.html"><button>Our best sellers</button></a>
+          <a href="products.php"><button>Our best sellers</button></a>
         </div>
       </div>
       <div class="slider-item">
@@ -54,7 +54,7 @@
         <div class="slider-content">
           <h1>Transform your space</h1>
           <p>With the best designs tailored for you</p>
-          <a href="products.html"><button>Our best sellers</button></a>
+          <a href="products.php"><button>Our best sellers</button></a>
         </div>
       </div>
       <div class="slider-item">
@@ -62,7 +62,7 @@
         <div class="slider-content">
           <h1>The perfect interior</h1>
           <p>We create dreams into reality</p>
-          <a href="products.html"><button>Our best sellers</button></a>
+          <a href="products.php"><button>Our best sellers</button></a>
         </div>
       </div>
     </div>
