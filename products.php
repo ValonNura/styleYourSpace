@@ -83,6 +83,8 @@ $products = $productHandler->getProducts($category, $sort);
             <div class="products">
                 <?php foreach ($categoryProducts as $product): ?>
                     <div class="product" data-category="<?= htmlspecialchars($product['category']); ?>">
+                     <a href="product_details.php?id=<?= htmlspecialchars($product['id']); ?>" class="product-link">
+
                         <?php if ($product['is_best_seller']): ?>
                             <div class="bestseller-label">Best Seller</div>
                         <?php endif; ?>
@@ -93,19 +95,19 @@ $products = $productHandler->getProducts($category, $sort);
                         <h4><?= htmlspecialchars($product['name']); ?></h4>
                         <p class="dimensions"><?= htmlspecialchars($product['dimensions']); ?></p>
                         <div class="price-container">
-                        <p class="price">
-                            <?php if (!empty($product['old_price']) && $product['old_price'] != '0.00'): ?>
-                                <span class="old-price">$<?= htmlspecialchars($product['old_price']); ?></span>
-                            <?php endif; ?>
-                            $<?= htmlspecialchars($product['price']); ?>
-                        </p>
-                    </div>
-
+                            <p class="price">
+                                <?php if (!empty($product['old_price']) && $product['old_price'] != '0.00'): ?>
+                                    <span class="old-price">$<?= htmlspecialchars($product['old_price']); ?></span>
+                                <?php endif; ?>
+                                $<?= htmlspecialchars($product['price']); ?>
+                            </p>
+                        </div>
                         <div class="stars">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
                                 <i class="fa<?= $i <= $product['rating'] ? 's' : 'r'; ?> fa-star"></i>
                             <?php endfor; ?>
                         </div>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -114,39 +116,37 @@ $products = $productHandler->getProducts($category, $sort);
 </main>
 
     </div>
-    
     <section class="footer">
-     <div class="footer-boxes">
-      <div class="footer-box">
-        <h4>Stay connected with us</h4>
-        <p>Follow us on social media for the latest updates, inspiration, and more!</p>
-          <div class="icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+        <div class="footer-boxes">
+            <div class="footer-box">
+                <h4>Stay connected with us</h4>
+                <p>Follow us on social media for the latest updates, inspiration, and more!</p>
+                <div class="icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Subscribe to our newsletter</h4>
+                <p>Subscribe for exclusive deals and updates!</p>
+                <form class="newsletter" action="subscribe.php" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-
-      <div class="footer-box">
-        <h4>Subscribe to our newsletter</h4>
-        <p>Subscribe for exclusive deals and updates!</p>
-          <form class="newsletter" id="subscribeForm">
-            <input type="email" name="email" id="email" placeholder="Enter your email" required />
-              <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2024 Style Your Space. All rights reserved.</p>
-      </div>
+        <p>&copy; 2024 Style Your Space. All rights reserved.</p>
     </section>
+    <script src="script.js"></script>
+</body>
+</html>ection>
 
    
     <script src="js/script.js"></script>    

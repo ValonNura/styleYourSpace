@@ -54,6 +54,13 @@ if (isset($_GET['message'])) {
             <label for="rating">Rating (1-5):</label>
             <input type="number" name="rating" id="rating" min="1" max="5">
             
+            <label for="stock">Stock Quantity (Max: 10):</label>
+            <input type="number" name="stock" id="stock" min="0" max="10" value="10" required>
+
+            <label for="description">Product Description:</label>
+            <textarea name="description" id="description" required></textarea>
+
+
             <button type="submit">Add Product</button>
         </form>
     </div>

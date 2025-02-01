@@ -99,3 +99,32 @@ VALUES
 ('Wall Decor', 'decor', '36" L x 2" W x 24" H', 2400.00, 2800.00, 'uploads/wall_decor.png', 'uploads/wall_decor_hover.png', 1, 5),
 ('Porcelain Vase', 'decor', '12" H x 7" W x 7" D', 400.00, 450.00, 'uploads/porcelain_vase.png', 'uploads/porcelain_vase_hover.png', 0, 4);
 
+CREATE TABLE product_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    description TEXT NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+ALTER TABLE product_details ADD COLUMN stock INT DEFAULT 10;
+
+INSERT INTO product_details (product_id, description, stock)
+SELECT 
+    id, 
+    CONCAT(
+        'Hand-twisted solid steel frame. ',
+        'Modern yet timeless design. ',
+        'Dimensions: ', dimensions, '. ',
+        'Weight capacity: 600 lbs.'
+    ), 
+    10
+FROM products;
+
+
+UPDATE product_details pd
+JOIN products p ON pd.product_id = p.id
+SET pd.description = CONCAT(
+    'Hand-twisted solid steel frame.\n',
+    'Modern yet timeless design.\n',
+    'Dimensions: ', p.dimensions, '.\n',
+    'Weight capacity: 600 lbs.'
+);

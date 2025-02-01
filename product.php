@@ -11,10 +11,10 @@ class Product {
 
     public function getProducts($category = 'all', $sort = '') {
         try {
-            $sql = "SELECT * FROM products WHERE 1=1";
-
+            $sql = "SELECT * FROM products";
+            
             if ($category !== 'all') {
-                $sql .= " AND category = :category";
+                $sql .= " WHERE category = :category";
             }
 
             if ($sort === 'price_asc') {
@@ -26,13 +26,12 @@ class Product {
             $stmt = $this->db->prepare($sql);
 
             if ($category !== 'all') {
-                $stmt->bindParam(':category', $category);
+                $stmt->bindParam(':category', $category, PDO::PARAM_STR);
             }
 
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Error fetching products: " . $e->getMessage();
             return [];
         }
     }
