@@ -105,7 +105,10 @@ CREATE TABLE product_details (
     description TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
+
+
 ALTER TABLE product_details ADD COLUMN stock INT DEFAULT 10;
+
 
 INSERT INTO product_details (product_id, description, stock)
 SELECT 
@@ -128,3 +131,25 @@ SET pd.description = CONCAT(
     'Dimensions: ', p.dimensions, '.\n',
     'Weight capacity: 600 lbs.'
 );
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    product_image VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    zip_code VARCHAR(10) NOT NULL,
+    shipping_method VARCHAR(50) NOT NULL,
+    price_per_unit DECIMAL(10, 2) NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    customer_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telephone VARCHAR(20) NOT NULL,
+    address TEXT NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+ALTER TABLE orders ADD COLUMN comments TEXT;

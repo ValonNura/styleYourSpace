@@ -42,7 +42,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     <div class="btn">
         <button class="close" id="closeCartBtn">CLOSE</button>
-        <a href="checkout.php?product_id=<?= $product['id'] ?>&zipcode=<?= $selectedZipCode ?>" class="checkout-btn">Checkout</a>
+        <a href="#" id="checkout-btn" class="checkout-btn">Checkout</a>
 
     </div>
 </div>
@@ -129,9 +129,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </label>
         <select id="zip-code-dropdown" class="zip-code-dropdown">
             <option value="" disabled selected>Zipcode</option>
-            <option value="10000">10000 - Prishtin</option>
+            <option value="10000">10000 - Prishtinë</option>
             <option value="20000">20000 - Prizren</option>
-            <option value="50000">50000 - Mitrovic</option>
+            <option value="50000">50000 - Mitrovicë</option>
         </select>
     </div>
 </div>
@@ -397,6 +397,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateCartCount();
+});
+document.getElementById('checkout-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const selectedZipCode = document.getElementById('zip-code-dropdown').value;
+    const quantity = document.getElementById('quantity').value;
+    const productId = <?= $product['id'] ?>;
+
+    if (!selectedZipCode) {
+        alert('Please select a zip code before proceeding to checkout.');
+        return;
+    }
+
+    const checkoutUrl = `checkout_view.php?product_id=${productId}&zip_code=${selectedZipCode}&quantity=${quantity}`;
+    window.location.href = checkoutUrl;
 });
 
 

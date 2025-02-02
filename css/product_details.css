@@ -356,7 +356,7 @@
     padding-left: 80px;
   }
   
-  /* cart */
+  
   .cartTab {
     position: fixed;
     right: -400px;
@@ -475,14 +475,26 @@
     background: #bbb;
   }
   
-  .btn .checkOut {
-    background: #000;
-    color: #fff;
-  }
-  
-  .btn .checkOut:hover {
-    background: #333;
-  }
+  .checkout-btn {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkout-btn:hover {
+    background: #bbb;
+}
+
   
   .related-products {
     padding: 40px 20px;
@@ -693,3 +705,5 @@
     color: #555;
     text-align: center;
   }
+
+  

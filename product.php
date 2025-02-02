@@ -9,6 +9,7 @@ class Product {
         $this->db = $database->connect();
     }
 
+    // Fetch all products with optional category and sorting
     public function getProducts($category = 'all', $sort = '') {
         try {
             $sql = "SELECT * FROM products";
@@ -33,6 +34,18 @@ class Product {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             return [];
+        }
+    }
+
+    // Fetch a single product by its ID
+    public function fetchProduct($productId) {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM products WHERE id = :id");
+            $stmt->bindParam(':id', $productId, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            return null;
         }
     }
 }
