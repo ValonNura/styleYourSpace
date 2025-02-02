@@ -1,4 +1,18 @@
 <?php
+
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: SignIn.php"); 
+    exit();
+}
+
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); 
+header("Pragma: no-cache");
+header("Expires: 0");
+
 require_once "Database.php";
 require_once "User.php";
 

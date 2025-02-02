@@ -124,5 +124,13 @@ class User {
         }
     </script>
     <script src="script.js"></script>
+    <?php if (isset($_GET['signup']) && $_GET['signup'] == 'success'): ?>
+    <script>
+        window.onload = function() {
+            alert('Signup successful! You can now log in.');
+        };
+    </script>
+<?php endif; ?>
+
 </body>
 </html>

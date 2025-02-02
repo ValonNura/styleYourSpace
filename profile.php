@@ -1,10 +1,23 @@
 <?php
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: SignIn.php"); 
+    exit();
+}
+
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); 
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
 require_once 'database.php';
 require_once 'userContactManager.php';
 require_once 'subscribe.php';
 require_once 'profilecontroller.php';
 
-session_start();
 
 $db = new Database('localhost', 'projekti', 'root', '');
 

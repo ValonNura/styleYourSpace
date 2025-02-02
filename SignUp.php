@@ -33,7 +33,9 @@ class Database {
             $stmt->bind_param("sss", $name, $email, $hashedPassword);
 
             if ($stmt->execute()) {
-                return "Registration successful!";
+                // Ridrejto te SignIn.php me parametër suksesi
+                header("Location: SignIn.php?signup=success");
+                exit();
             } else {
                 return "Error: " . $stmt->error;
             }

@@ -63,7 +63,6 @@ h1 {
     margin-right: 10px; 
 }
 
-
 body {
     display: flex;
     background-color: #eae7e4; 
@@ -130,7 +129,6 @@ header {
     padding: 5px;
 }
 
-
 .dashboard-section {
     margin-bottom: 40px;
 }
@@ -138,6 +136,7 @@ header {
 .cards {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -147,6 +146,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex: 1;
+    min-width: 200px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -165,7 +165,6 @@ header {
 .card:hover .card-icon {
     color: #945b55; 
 }
-
 
 table {
     width: 100%;
@@ -216,3 +215,55 @@ th {
     background-color: #944d4a;
 }
 
+/* Additional Styles for New Sections */
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    background: #fcfbfb;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list .mark-done {
+    background-color: #8c746a;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-list .mark-done:hover {
+    background-color: #b58e7d;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    background: #fcfbfb;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+canvas#salesChart {
+    background: #fcfbfb;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}

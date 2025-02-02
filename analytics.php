@@ -1,4 +1,19 @@
 <?php
+
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: SignIn.php"); 
+    exit();
+}
+
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); 
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
 require_once 'database.php';
 require_once 'performanceAnalytics.php'; 
 $db = new Database('localhost', 'projekti', 'root', '');
