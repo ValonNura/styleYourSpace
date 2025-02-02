@@ -1,18 +1,22 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: SignIn.php"); 
     exit();
 }
 
+require_once 'database.php';
+require_once 'DashboardManager.php';
+require_once 'DashboardController.php';
 
-header("Cache-Control: no-cache, no-store, must-revalidate"); 
-header("Pragma: no-cache");
-header("Expires: 0");
+$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+
+$dashboardManager = new DashboardManager($db);
+$dashboardController = new DashboardController($dashboardManager);
+
+$data = $dashboardController->getDashboardData();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +32,7 @@ header("Expires: 0");
         <h2>Admin Dashboard</h2>
         <ul>
             <li><a href="dashboard.php" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="products.php"><i class="fas fa-couch"></i> Furniture</a></li>
+            <li><a href="products.php"><i class="fas fa-couch"></i> Products</a></li>
             <li><a href="orders.php"><i class="fas fa-box"></i> Orders</a></li>
             <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
             <li><a href="add_product.php"><i class="fas fa-plus"></i> New Product</a></li>
@@ -57,73 +61,43 @@ header("Expires: 0");
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-users"></i></div>
                     <h3>Total Users</h3>
-                    <p>150 Active Users</p>
+                    <p><?php echo $data['totalUsers']; ?> Active Users</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-box"></i></div>
                     <h3>Total Orders</h3>
-                    <p>120 Completed Orders</p>
+                    <p><?php echo $data['totalOrders']; ?> Completed Orders</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
                     <h3>Total Revenue</h3>
-                    <p>$5,000 This Month</p>
+                    <p>$<?php echo $data['totalRevenue']; ?> This Month</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-paint-roller"></i></div>
-                    <h3>Active Designs</h3>
-                    <p>35 Published Designs</p>
+                    <div class="card-icon"><i class="fas fa-star"></i></div>
+                    <h3>Best Selling Products</h3>
+                    <p><?php echo $data['bestSellingProducts']; ?> Products</p>
                 </div>
             </div>
         </section>
 
-        <section id="analytics" class="dashboard-section">
-            <h2>Sales Analytics</h2>
-            <canvas id="salesChart"></canvas>
-        </section>
-
-        <section id="tasks" class="dashboard-section">
-            <h2>Admin To-Do List</h2>
-            <ul class="todo-list">
-                <li>Review new orders <button class="mark-done">Mark as Done</button></li>
-                <li>Update homepage banner <button class="mark-done">Mark as Done</button></li>
-                <li>Respond to user feedback <button class="mark-done">Mark as Done</button></li>
+        <section id="recent-orders" class="dashboard-section">
+            <h2>Recent Orders</h2>
+            <ul class="activity-list">
+                <?php foreach ($data['recentOrders'] as $order): ?>
+                    <li><?php echo htmlspecialchars($order['product_name']); ?> - $<?php echo htmlspecialchars($order['total_price']); ?> (<?php echo htmlspecialchars($order['order_date']); ?>)</li>
+                <?php endforeach; ?>
             </ul>
         </section>
 
-        <section id="activity-feed" class="dashboard-section">
-            <h2>Latest Activity</h2>
+        <section id="recent-contacts" class="dashboard-section">
+            <h2>Recent Contacts</h2>
             <ul class="activity-list">
-                <li>John Doe registered 5 minutes ago.</li>
-                <li>Order #123 placed 10 minutes ago.</li>
-                <li>Anna left a comment on Modern Living Room.</li>
+                <?php foreach ($data['recentContacts'] as $contact): ?>
+                    <li><?php echo htmlspecialchars($contact['name']); ?> - <?php echo htmlspecialchars($contact['message']); ?> (<?php echo htmlspecialchars($contact['created_at']); ?>)</li>
+                <?php endforeach; ?>
             </ul>
         </section>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('salesChart').getContext('2d');
-        const salesChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May'],
-                datasets: [{
-                    label: 'Sales',
-                    data: [1200, 1900, 3000, 5000, 2400],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>

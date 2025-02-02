@@ -2,20 +2,19 @@
 
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: SignIn.php"); 
     exit();
 }
 
-
 header("Cache-Control: no-cache, no-store, must-revalidate"); 
 header("Pragma: no-cache");
 header("Expires: 0");
 
-
 require_once 'database.php';
 require_once 'performanceAnalytics.php'; 
+require_once 'OrderAnalytics.php'; 
+
 $db = new Database('localhost', 'projekti', 'root', '');
 $connection = $db->connect();
 
@@ -23,10 +22,12 @@ if (!$connection) {
     die("Database connection failed.");
 }
 
-
 $analytics = new performanceAnalytics($connection);
 $revenueData = $analytics->getRevenueData();
 $userGrowthData = $analytics->getUserGrowthData();
+
+$orderAnalytics = new OrderAnalytics($connection);
+$orderPerformanceData = $orderAnalytics->getOrderPerformance();
 ?>
 
 <!DOCTYPE html>
@@ -44,14 +45,13 @@ $userGrowthData = $analytics->getUserGrowthData();
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
             <li><a href="products.php"><i class="fas fa-couch"></i> Furniture</a></li>
-            <li><a href="orders.php" ><i class="fas fa-box"></i> Orders</a></li>
+            <li><a href="orders.php"><i class="fas fa-box"></i> Orders</a></li>
             <li><a href="profile.php"><i class="fas fa-user-cog"></i> Account Settings</a></li>
             <li><a href="add_product.php"><i class="fas fa-plus"></i>  New Product</a></li>
             <li><a href="analytics.php" class="active"><i class="fas fa-chart-line"></i> Analytics</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
             <li><a href="user_management.php"><i class="fas fa-users"></i> User Management</a></li>
             <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
-
         </ul>    
     </div>
 
@@ -85,13 +85,15 @@ $userGrowthData = $analytics->getUserGrowthData();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const orderPerformanceData = <?php echo json_encode($orderPerformanceData); ?>;
+
         new Chart(revenueCtx, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: orderPerformanceData.months,
                 datasets: [{
                     label: 'Revenue ($)',
-                    data: <?php echo json_encode($revenueData); ?>,
+                    data: orderPerformanceData.total_revenue,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     tension: 0.4

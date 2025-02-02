@@ -31,6 +31,14 @@ class UserManagementApp {
 
 $app = new UserManagementApp();
 $users = $app->getUsers();
+
+function getTotalActiveUsers($db) {
+    $query = "SELECT COUNT(*) as total FROM users WHERE status = 'active'";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total'];
+}
 ?>
 
 <!DOCTYPE html>
