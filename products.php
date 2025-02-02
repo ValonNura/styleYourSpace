@@ -1,14 +1,18 @@
 <?php
+session_start();
 require_once 'database.php';
-require_once 'Product.php'; 
+require_once 'Product.php';
 
-$productHandler = new Product();
+$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$productHandler = new Product($db);
 
-$category = isset($_GET['category']) ? $_GET['category'] : 'all';
-$sort = isset($_GET['sort']) ? $_GET['sort'] : '';
+$category = $_GET['category'] ?? 'all';
+$sort = $_GET['sort'] ?? '';
+
 
 $products = $productHandler->getProducts($category, $sort);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +26,6 @@ $products = $productHandler->getProducts($category, $sort);
 </head>
 <body>
     <section class="header">
-    <?php session_start(); ?>
 <nav>
     <div class="nav-links" id="navLinks">
         <ul>

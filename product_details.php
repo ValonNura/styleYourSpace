@@ -1,11 +1,16 @@
 <?php
-require_once 'ProductDetails.php';
-
 session_start();
 
-$productDetails = new ProductDetails();
+require_once 'database.php';
+require_once 'ProductDetails.php';
+
+
+$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$productDetails = new ProductDetails($db);
+
 $product = null;
 $relatedProducts = [];
+
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $productId = $_GET['id'];

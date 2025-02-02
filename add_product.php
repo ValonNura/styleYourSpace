@@ -17,6 +17,7 @@ header("Expires: 0");
 if (isset($_GET['message'])) {
     echo "<script>alert('" . $_GET['message'] . "');</script>";
 }
+
 ?>
 
 <!DOCTYPE html>

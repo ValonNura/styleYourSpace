@@ -16,9 +16,12 @@ class Order {
             ");
             return $stmt->execute($orderData);
         } catch (PDOException $e) {
-            return "Error placing order: " . $e->getMessage();
+          
+            file_put_contents('order_errors.log', "DB Error: " . $e->getMessage() . "\n", FILE_APPEND);
+            return false;
         }
     }
+    
     
     public function getAllOrders() {
         try {
@@ -33,15 +36,6 @@ class Order {
         }
     }
   
-    public function fetchProduct($productId) {
-        try {
-            $stmt = $this->db->prepare("SELECT * FROM products WHERE id = :id");
-            $stmt->bindParam(':id', $productId, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            return null;
-        }
-    }
+    
 }
 ?>
