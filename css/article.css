@@ -1,0 +1,52 @@
+.article-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.article-page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.article-page img {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.article-page p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.full-content {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.full-content h2 {
+  color: #444;
+  margin-top: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f4a261;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background: #e76f51;
+}
