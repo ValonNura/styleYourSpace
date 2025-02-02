@@ -706,4 +706,158 @@
     text-align: center;
   }
 
+  @media (max-width: 1000px) {
+    nav {
+        padding: 2% 4%;
+    }
+
+    .nav-links ul li a {
+        font-size: 14px;
+    }
+
+    .product-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .carousel {
+        width: 500px;
+        height: 500px;
+    }
+
+    .thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-details {
+        padding: 15px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .product-price {
+        font-size: 22px;
+    }
+
+    .add-to-cart {
+        width: 80%;
+        padding: 12px;
+    }
+
+    .products-grid {
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 250px;
+    }
+
+    .footer-box {
+        padding: 15px;
+    }
+
+    .footer-box h4 {
+        font-size: 20px;
+    }
+
+    .newsletter input, .newsletter button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-links ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .product-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .carousel {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+
+    .product-details {
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 24px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+
+    .add-to-cart {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .footer-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .newsletter button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .cartTab {
+        width: 100%;
+        right: -100%;
+    }
+
+    .cartTab.open {
+        right: 0;
+    }
+}
+
+
   

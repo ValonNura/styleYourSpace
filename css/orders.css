@@ -421,3 +421,83 @@ form input, form select {
     from { transform: translateY(-40px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+
+    .profile-btn, .logout-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .search-bar, .status-filter, .date-filter {
+        width: 200px;
+    }
+
+    .stat-card {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .stat-card p {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .profile-btn, .logout-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .profile-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cards, .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .stat-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-bar, .status-filter, .date-filter {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

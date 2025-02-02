@@ -256,4 +256,75 @@ button.delete-message:hover {
     background-color: #4c4242;
 }
 
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .profile-btn, .logout-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .profile-settings {
+        max-width: 500px;
+    }
+
+    .messages-list {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .profile-btn, .logout-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .profile-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile-settings {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .messages-list {
+        max-height: 300px;
+    }
+
+    .message-item {
+        padding: 12px;
+    }
+
+    .delete-message {
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+}
+
 
