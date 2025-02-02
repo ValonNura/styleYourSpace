@@ -95,7 +95,7 @@ class CheckoutController {
     }
 }
 
-$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
 $checkout = new CheckoutController($db);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

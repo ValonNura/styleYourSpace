@@ -20,7 +20,7 @@ class GetContacts {
 
 header('Content-Type: application/json');
 
-$db = new Database('localhost', 'projekti', 'root', '');
+$db = new Database('localhost', 'projekti', 'root', 'loni1234');
 $getContacts = new GetContacts($db);
 $contacts = $getContacts->fetchContacts();
 echo json_encode($contacts);

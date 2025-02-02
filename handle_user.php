@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 require_once "Database.php";
 require_once "User.php";
 
-$database = new Database("localhost", "projekti", "root", "");
+$database = new Database("localhost", "projekti", "root", "loni1234");
 $userManager = new User($database);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

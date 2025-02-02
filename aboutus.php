@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Your Space</title>
-    <link rel="icon" href="img/favicon-32x32.png" />
-    <link rel="stylesheet" href="css/aboutus.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
-  
-    <section class="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Your Space</title>
+  <link rel="icon" href="img/favicon-32x32.png" />
+  <link rel="stylesheet" href="css/aboutus.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <section class="header">
     <?php session_start(); ?>
-<nav>
-    <div class="nav-links" id="navLinks">
-        <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="aboutus.php">About us</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="contactus.php">Contact us</a></li>
-            <li><a href="blog.php">Blog</a></li>
-
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="SignIn.php">Logout</a></li>
-            <?php else: ?>
-                <li><a href="SignIn.php">Sign in</a></li>
-            <?php endif; ?>
-        </ul>
-    </div>
-</nav>
-
-      <div class="text-box">
-        <h1>About Us</h1>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
       </div>
-    </section>
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="aboutus.php">About us</a></li>
+          <li><a href="products.php">Products</a></li>
+          <li><a href="contactus.php">Contact us</a></li>
+          <li><a href="blog.php">Blog</a></li>
+
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <li><a href="SignIn.php">Logout</a></li>
+          <?php else: ?>
+            <li><a href="SignIn.php">Sign in</a></li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-box">
+      <h1>About Us</h1>
+    </div>
+  </section>
   <br>
   <br>
-   
-    <section class="our-company">
-        <div class="intro-section">
-          <p>
-           Our mission is to inspire and transform your living spaces with innovative designs and ideas. 
-            We believe that every home, office, or personal space has the potential to become a haven of comfort, elegance, and style. With a team of talented professionals and a deep understanding of design trends, we ensure that every project reflects your personality and lifestyle.
-            Discover how we can help you create spaces that not only meet your needs but also inspire your daily life. Let us partner with you to craft environments that are as beautiful as they are functional—a place you can truly call your own.
-            </p>
-            <img src="./img/bg.png" >
-        </div>
-  
-        <div class="what-we-provide">
-          <h1>What We Provide</h1>
+
+  <section class="our-company">
+    <div class="intro-section">
+      <p>
+        Our mission is to inspire and transform your living spaces with innovative designs and ideas.
+        We believe that every home, office, or personal space has the potential to become a haven of comfort, elegance, and style. With a team of talented professionals and a deep understanding of design trends, we ensure that every project reflects your personality and lifestyle.
+        Discover how we can help you create spaces that not only meet your needs but also inspire your daily life. Let us partner with you to craft environments that are as beautiful as they are functional—a place you can truly call your own.
+      </p>
+      <img src="./img/bg.png">
+    </div>
+
+    <div class="what-we-provide">
+      <h1>What We Provide</h1>
       <div class="row">
         <div class="our-company-col">
           <h3>What We Do</h3>
@@ -98,145 +100,151 @@
           </p>
         </div>
       </div>
-    </section>
+  </section>
 
-    <section class="Company">
-      <h1>Our Company</h1>
-      <p>
-        Here’s a glimpse of our company and what we’re all about—check out the
-        pictures below!
-      </p>
-      <div class="row">
-        <div class="Company-col">
-          <img src="./img/company.jpg" alt="Company" />
-          <div class="layer">
-            <h3>Prishtinë</h3>
-          </div>
-        </div>
-        <div class="Company-col">
-          <img src="./img/off.png" alt="Company" />
-          <div class="layer">
-            <h3>Mitrovicë</h3>
-          </div>
-        </div>
-        <div class="Company-col">
-          <img src="./img/company1.jpg" alt="Company" />
-          <div class="layer">
-            <h3>Prizren</h3>
-          </div>
+  <section class="Company">
+    <h1>Our Company</h1>
+    <p>
+      Here’s a glimpse of our company and what we’re all about—check out the
+      pictures below!
+    </p>
+    <div class="row">
+      <div class="Company-col">
+        <img src="./img/company.jpg" alt="Company" />
+        <div class="layer">
+          <h3>Prishtinë</h3>
         </div>
       </div>
-    </section>
-
-    <section class="Comments">
-      <h1>What Our Clients Say</h1>
-      <div class="row">
-        <div class="comments-col">
-          <img src="./img/jane.jpeg" alt="Jane Smith" />
-          <div>
-            <p>
-              Working with Style Your Space was an absolute delight! From the
-              very beginning, their team took the time to understand my vision
-              and transformed my home into a stunning, functional space that
-              perfectly reflects my personality. The attention to detail,
-              creative ideas, and exceptional craftsmanship were beyond my
-              expectations. I highly recommend them to anyone looking to revamp
-              their space with elegance and style!
-            </p>
-            <h3>Jane Smith</h3>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-        </div>
-        <div class="comments-col">
-          <img src="./img/david.webp" alt="David James" />
-          <div>
-            <p>
-              I had an incredible experience with Style Your Space. Their team
-              was professional, approachable, and always went the extra mile to
-              ensure my satisfaction. My office space has become a source of
-              inspiration and productivity, thanks to their thoughtful design. I
-              look forward to collaborating with them again in the future!
-            </p>
-            <h3>David James</h3>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
+      <div class="Company-col">
+        <img src="./img/off.png" alt="Company" />
+        <div class="layer">
+          <h3>Mitrovicë</h3>
         </div>
       </div>
-    </section>
+      <div class="Company-col">
+        <img src="./img/company1.jpg" alt="Company" />
+        <div class="layer">
+          <h3>Prizren</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="a">
-      <h1>Reach out for more information!</h1>
-      <button id="redirectButton">Contact Us</button>
+  <section class="Comments">
+    <h1>What Our Clients Say</h1>
+    <div class="row">
+      <div class="comments-col">
+        <img src="./img/jane.jpeg" alt="Jane Smith" />
+        <div>
+          <p>
+            Working with Style Your Space was an absolute delight! From the
+            very beginning, their team took the time to understand my vision
+            and transformed my home into a stunning, functional space that
+            perfectly reflects my personality. The attention to detail,
+            creative ideas, and exceptional craftsmanship were beyond my
+            expectations. I highly recommend them to anyone looking to revamp
+            their space with elegance and style!
+          </p>
+          <h3>Jane Smith</h3>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </div>
+      </div>
+      <div class="comments-col">
+        <img src="./img/david.webp" alt="David James" />
+        <div>
+          <p>
+            I had an incredible experience with Style Your Space. Their team
+            was professional, approachable, and always went the extra mile to
+            ensure my satisfaction. My office space has become a source of
+            inspiration and productivity, thanks to their thoughtful design. I
+            look forward to collaborating with them again in the future!
+          </p>
+          <h3>David James</h3>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
-    <script>
-      const button = document.getElementById('redirectButton');
-      button.addEventListener('click', function () {
-        window.location.href = 'Contactus.php'; 
-      });
-    </script>
+  <section class="a">
+    <h1>Reach out for more information!</h1>
+    <button id="redirectButton">Contact Us</button>
 
-    <section class="footer">
-     <div class="footer-boxes">
+  </section>
+  <script>
+    const button = document.getElementById('redirectButton');
+    button.addEventListener('click', function() {
+      window.location.href = 'Contactus.php';
+    });
+  </script>
+
+  <section class="footer">
+    <div class="footer-boxes">
       <div class="footer-box">
         <h4>Stay connected with us</h4>
         <p>Follow us on social media for the latest updates, inspiration, and more!</p>
-          <div class="icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+        <div class="icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
+      </div>
 
       <div class="footer-box">
         <h4>Subscribe to our newsletter</h4>
         <p>Subscribe for exclusive deals and updates!</p>
-          <form class="newsletter" id="subscribeForm">
-            <input type="email" name="email" id="email" placeholder="Enter your email" required />
-              <button type="submit">Subscribe</button>
-          </form>
-        </div>
+        <form class="newsletter" id="subscribeForm">
+          <input type="email" name="email" id="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <p>© 2024 Style Your Space. All rights reserved.</p>
-      </div>
-    </section>
+    <div class="footer-bottom">
+      <p>© 2024 Style Your Space. All rights reserved.</p>
+    </div>
+  </section>
 
-   
-    <script src="js/script.js"></script>    
-<script>
+
+  <script src="js/script.js"></script>
+  <script>
     document.getElementById("subscribeForm").addEventListener("submit", function(event) {
-        event.preventDefault(); 
+      event.preventDefault();
 
-        var formData = new FormData(this);
+      var formData = new FormData(this);
 
-        fetch("subscribe.php", { 
-            method: "POST",
-            body: formData
+      fetch("subscribe.php", {
+          method: "POST",
+          body: formData
         })
         .then(response => response.text())
         .then(data => {
-            alert(data); 
-            document.getElementById("email").value = ""; 
+          alert(data);
+          document.getElementById("email").value = "";
         })
         .catch(error => console.error("Error:", error));
     });
-</script>
+  </script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 
-  </body>
+</body>
+
 </html>

@@ -4,7 +4,7 @@ require_once 'database.php';
 require_once 'Order.php';
 
 try {
-    $db = new Database('localhost', 'projekti', 'root', '');
+    $db = new Database('localhost', 'projekti', 'root', 'loni1234');
     $conn = $db->connect();
 
     

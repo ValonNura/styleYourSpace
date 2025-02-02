@@ -20,7 +20,7 @@ class GetSubscribers {
 
 header('Content-Type: application/json');
 
-$db = new Database('localhost', 'projekti', 'root', '');
+$db = new Database('localhost', 'projekti', 'root', 'loni1234');
 $getSubscribers = new GetSubscribers($db);
 $subscribers = $getSubscribers->fetchSubscribers();
 echo json_encode($subscribers);

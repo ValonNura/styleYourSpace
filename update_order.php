@@ -3,7 +3,7 @@ require_once 'Database.php';
 require_once 'OrderManager.php';
 require_once 'OrderController.php';
 
-$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
 $orderManager = new OrderManager($db);
 $orderController = new OrderController($orderManager);
 

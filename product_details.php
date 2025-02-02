@@ -5,7 +5,7 @@ require_once 'database.php';
 require_once 'ProductDetails.php';
 
 
-$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
 $productDetails = new ProductDetails($db);
 
 $product = null;

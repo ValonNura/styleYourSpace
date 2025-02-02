@@ -19,7 +19,7 @@ require_once 'subscribe.php';
 require_once 'profilecontroller.php';
 
 
-$db = new Database('localhost', 'projekti', 'root', '');
+$db = new Database('localhost', 'projekti', 'root', 'loni1234');
 
 $userManager = new User($db->connect());
 $contactMessageManager = new ContactMessage($db->connect());

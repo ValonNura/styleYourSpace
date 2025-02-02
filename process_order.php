@@ -5,7 +5,7 @@ require_once 'Order.php';
 require_once 'Cart.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+    $db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
     $orderHandler = new Order($db);
     $cart = new Cart();
 

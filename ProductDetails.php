@@ -5,7 +5,7 @@ class ProductDetails {
     private $db;
 
     public function __construct() {
-        $database = new Database('localhost', 'projekti', 'root', '');
+        $database = new Database('localhost', 'projekti', 'root', 'loni1234');
         $this->db = $database->connect();
     }
 

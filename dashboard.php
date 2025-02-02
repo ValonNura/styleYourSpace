@@ -10,7 +10,7 @@ require_once 'database.php';
 require_once 'DashboardManager.php';
 require_once 'DashboardController.php';
 
-$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
 
 $dashboardManager = new DashboardManager($db);
 $dashboardController = new DashboardController($dashboardManager);

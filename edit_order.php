@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$db = (new Database('localhost', 'projekti', 'root', 'loni1234'))->connect();
 $orderManager = new OrderManager($db);
 
 $order_id = $_GET['id'] ?? null;

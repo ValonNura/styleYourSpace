@@ -19,8 +19,13 @@ body {
 }
 
 nav {
-  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   padding: 2% 6%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -124,13 +129,13 @@ h1 {
 
 }
 
-.what-we-provide h1{
+.what-we-provide h1 {
   text-align: center;
   margin-top: 150px;
 
 }
 
-p{
+p {
   color: #777;
   font-size: 14px;
   font-weight: 400;
@@ -146,7 +151,7 @@ p{
 }
 
 .our-company-col {
- 
+
   flex-basis: 31%;
   background: #ddd2d2;
   border-radius: 10px;
@@ -381,7 +386,7 @@ h3 {
 
 .newsletter button {
   padding: 12px 20px;
-  background-color:#333;
+  background-color: #333;
   color: white;
   font-size: 14px;
   border: none;
@@ -424,19 +429,20 @@ h3 {
   }
 
   .nav-links ul {
-    display: block; 
+    display: block;
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background:transparent;
+    background: transparent;
     position: absolute;
     top: 10px;
     left: 0;
   }
 
   .nav-links.active ul {
-    display: flex; 
+    display: flex;
   }
+
   .text-box h1 {
     font-size: 36px;
   }
@@ -509,7 +515,7 @@ h3 {
   .Company-col,
   .comments-col {
     flex-basis: 48%;
-    margin:10px;
+    margin: 10px;
   }
 
   .footer-boxes {
@@ -606,3 +612,63 @@ h3 {
   }
 }
 
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1001;
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #333;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-links ul li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links ul li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links ul li a:hover {
+    color: #f4a261;
+  }
+
+}
