@@ -33,47 +33,39 @@
   </section>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Welcome to Our Interior Design Blog</h1>
-        <p>
-          Discover tips, trends, and inspiration to create your perfect space.
-        </p>
-      </div>
-    </section>
-
-    <div class="container">
-      <section class="blog-posts">
-        <div class="container">
-          <h2>Latest Blog Posts</h2>
-          <div class="posts">
-            <article class="post">
-              <img src="img/living/artikulli1.jpg" alt="Modern Living Room" />
-              <h3>Top 5 Modern Living Room Trends</h3>
-              <p>Explore the latest styles and ideas for transforming your living space.</p>
-              <a href="article-template.php?id=1" class="read-more">Read More</a>
-            </article>
-
-            <article class="post">
-              <img src="img/living/artikulli2.jpg" alt="Cozy Bedroom" />
-              <h3>Creating a Cozy Bedroom Retreat</h3>
-              <p>Tips and tricks for designing the perfect relaxing sanctuary.</p>
-              <a href="article-template.php?id=2" class="read-more">Read More</a>
-            </article>
-
-            <article class="post">
-              <img src="img/living/artikulli3.jpg" alt="Cozy Bedroom" />
-              <h3>Creating a Cozy Bedroom Retreat</h3>
-              <p>Tips and tricks for designing the perfect relaxing sanctuary.</p>
-              <a href="article-template.php?id=3" class="read-more">Read More</a>
-            </article>
-            
-            
-
-          </div>
-        </div>
-      </section>
+  <section class="hero">
+    <div>
+      <h1>Welcome to Our Interior Design Blog</h1>
+      <p>Discover tips, trends, and inspiration to create your perfect space.</p>
     </div>
+  </section>
+
+  <section class="blog-posts">
+    <h2>Latest Blog Posts</h2>
+    <div class="posts">
+      <article class="post">
+        <img src="img/artikull2.png" alt="Modern Living Room">
+        <h3>Top 5 Modern Living Room Trends You Can't Miss</h3>
+        <p>Dive into the most exciting and innovative styles revolutionizing modern living spaces today.</p>
+        <a href="article-template.php?id=1" class="read-more">Read More</a>
+      </article>
+
+      <article class="post">
+        <img src="img/artikull3.png" alt="Relaxing Bedroom Oasis">
+        <h3>Create a Relaxing Bedroom Oasis with Our Products</h3>
+        <p>Discover how our premium products can transform your bedroom into a serene and stylish retreat.</p>
+        <a href="article-template.php?id=2" class="read-more">Read More</a>
+      </article>
+
+      <article class="post">
+        <img src="img/artikull4.png" alt="Maximize Storage">
+        <h3>5 Ingenious Ways to Maximize Storage in Small Apartments</h3>
+        <p>Unlock the full potential of your small apartment with these clever and stylish storage solutions.</p>
+        <a href="article-template.php?id=3" class="read-more">Read More</a>
+      </article>
+    </div>
+  </section>
+  </div>
   </main>
 
 

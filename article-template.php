@@ -1,65 +1,63 @@
 <?php
 $articles = [
     1 => [
-        "title" => "Top 5 Modern Living Room Trends",
-        "content" => "Explore the latest styles and ideas for transforming your living space.",
-        "image" => "img/living/artikulli1.jpg",
+        "title" => "Top 5 Modern Living Room Trends You Can't Miss",
+        "content" => "Dive into the most exciting and innovative styles revolutionizing modern living spaces today.",
+        "image" => "img/artikull2.png",
         "full_content" => "
-            <h2>1. Minimalist Design</h2>
-            <p>Minimalist style is gaining popularity, with clean lines and neutral colors dominating modern living rooms.</p>
+            <h2>1. Embracing Minimalist Elegance</h2>
+            <p>Minimalism is all about creating a serene environment with clean lines, neutral palettes, and functional furniture. Discover how to achieve a chic, clutter-free living room that exudes sophistication.</p>
 
-            <h2>2. Smart Technology</h2>
-            <p>From smart lighting to AI-powered assistants, technology is making its way into interior design.</p>
+            <h2>2. Integrating Smart Home Technology</h2>
+            <p>Transform your living room into a futuristic haven with smart lighting, automated climate control, and AI-powered gadgets that blend seamlessly into your decor.</p>
 
-            <h2>3. Natural Elements</h2>
-            <p>Using wood, stone, and plants helps bring a natural touch to your living space.</p>
+            <h2>3. Bringing Nature Indoors</h2>
+            <p>Incorporate natural materials like reclaimed wood, stone, and lush greenery to create a tranquil, earthy ambiance right in your living room.</p>
 
-            <h2>4. Multi-Functional Furniture</h2>
-            <p>Furniture that serves multiple purposes is essential in smaller living spaces.</p>
+            <h2>4. Versatile Multi-Functional Furniture</h2>
+            <p>Maximize space and functionality with stylish furniture that doubles as storage or transforms to suit different needs, perfect for modern urban living.</p>
 
-            <h2>5. Bold Colors</h2>
-            <p>While neutral tones are still popular, bold accent colors like emerald green and navy blue are trending.</p>
+            <h2>5. Bold and Beautiful Color Schemes</h2>
+            <p>While neutral tones dominate, bold accents in emerald green, deep navy, and mustard yellow are making waves, adding personality and flair to your living room.</p>
         "
     ],
     2 => [
-        "title" => "Krijoni një Dhoma Gjumi Relaksuese me Produktet Tona",
-        "content" => "Zbuloni si produktet tona cilësore mund të transformojnë dhomën tuaj të gjumit në një oaz qetësie.",
-        "image" => "img/living/artikulli2.jpg",
+        "title" => "Create a Relaxing Bedroom Oasis with Our Products",
+        "content" => "Discover how our premium products can transform your bedroom into a serene and stylish retreat.",
+        "image" => "img/artikull3.png",
         "full_content" => "
-            <h2>1. Çarçafë dhe Jastëkë të Cilësisë së Lartë</h2>
-            <p>Rehatia fillon me tekstilet. Zgjidhni çarçafët dhe jastëkët tanë prej fibrash natyrale që ofrojnë butësi dhe ajrosje optimale.</p>
+            <h2>1. Luxurious Sheets and Pillows</h2>
+            <p>Comfort begins with the right textiles. Choose our high-quality, natural fiber sheets and pillows for unmatched softness and breathability.</p>
 
-            <h2>2. Ngjyra Qetësuese dhe Dizajn Elegant</h2>
-            <p>Paleta e nuancave neutrale ose pastel sjell qetësi, ndërsa detajet moderne në dizajn krijojnë një atmosferë plot stil.</p>
+            <h2>2. Soothing Colors and Elegant Design</h2>
+            <p>Create a calming atmosphere with a palette of neutral or pastel tones, complemented by modern design elements that bring a touch of sophistication.</p>
 
-            <h2>3. Shtesa Dekorative</h2>
-            <p>Kombinoni jastëkë dekorues, batanije të buta ose tapete relaksuese për një prekje luksi dhe ngrohtësie.</p>
+            <h2>3. Decorative Touches for a Cozy Feel</h2>
+            <p>Enhance your space with decorative pillows, soft throws, and plush rugs that add warmth and luxury to your bedroom retreat.</p>
         "
     ],
     3 => [
-        "title" => "5 Ways to Maximize Storage in Small Apartments",
-        "content" => "Optimize your space with these creative storage solutions.",
-        "image" => "img/living/artikulli3.jpg",
+        "title" => "5 Ingenious Ways to Maximize Storage in Small Apartments",
+        "content" => "Unlock the full potential of your small apartment with these clever and stylish storage solutions.",
+        "image" => "img/artikull4.png",
         "full_content" => "
-            <h2>1. Utilize Vertical Space</h2>
-            <p>Install shelves or hanging organizers on walls to save precious floor space.</p>
+            <h2>1. Make the Most of Vertical Space</h2>
+            <p>Think upwards! Install floating shelves, wall-mounted organizers, and tall cabinets to free up floor space and keep your home tidy.</p>
 
-            <h2>2. Multi-Purpose Furniture</h2>
-            <p>Look for ottomans, benches, dhe tavolina që kanë hapësira të fshehta magazinimi.</p>
+            <h2>2. Invest in Multi-Purpose Furniture</h2>
+            <p>Opt for furniture pieces like ottomans with hidden compartments, storage benches, and coffee tables with drawers to combine style and functionality.</p>
 
-            <h2>3. Clear Containers & Labels</h2>
-            <p>Ruani gjërat tuaja në kontenierë transparentë dhe përdorni etiketa për organizim më të mirë.</p>
+            <h2>3. Clear Containers and Smart Labeling</h2>
+            <p>Use transparent containers to easily locate items and add labels for a well-organized, clutter-free environment.</p>
 
-            <h2>4. Under-Bed Storage</h2>
-            <p>Shfrytëzoni hapësirën nën shtrat për të vendosur kuti, valixhe ose sende të tjera të rralla.</p>
+            <h2>4. Utilize Under-Bed Storage</h2>
+            <p>Don't overlook the space beneath your bed. Store seasonal items, shoes, or linens in sleek, under-bed storage boxes.</p>
 
-            <h2>5. Declutter Regularly</h2>
-            <p>Hidhni ose dhuroni artikujt e panevojshëm për të shmangur mbingarkimin dhe ruajtur një ambient të rregullt.</p>
+            <h2>5. Regularly Declutter and Simplify</h2>
+            <p>Keep your space fresh and organized by regularly sorting through your belongings, donating or discarding items you no longer need.</p>
         "
     ]
 ];
-
-
 
 $article_id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
 
@@ -83,24 +81,110 @@ $article = $articles[$article_id];
     <meta property="og:description" content="<?php echo htmlspecialchars($article['content']); ?>">
     <meta property="og:image" content="<?php echo $article['image']; ?>">
     <link rel="stylesheet" href="css/article.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #4e4e4e;
+            margin: 0;
+            padding: 0;
+        }
+
+        .article-page {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            background-color: #e0e0e0;
+        }
+
+        .content {
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #5d5d5d;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #6e6e6e;
+        }
+
+        .full-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #707070;
+        }
+
+        .full-content h2 {
+            color: #7a7a7a;
+            margin-top: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #a89f91;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background: #90887b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <section class="article-page">
         <div class="container">
-            <h1><?php echo $article["title"]; ?></h1>
             <img src="<?php echo $article["image"]; ?>" alt="<?php echo $article["title"]; ?>">
-            <p><?php echo $article["content"]; ?></p>
-            <div class="full-content">
-                <?php echo $article["full_content"]; ?>
+            <div class="content">
+                <h1><?php echo $article["title"]; ?></h1>
+                <p><?php echo $article["content"]; ?></p>
+                <div class="full-content">
+                    <?php echo $article["full_content"]; ?>
+                </div>
+                <a href="blog.php" class="back-btn">Back to Blog</a>
             </div>
-            <a href="blog.php" class="back-btn">Back to Blog</a>
         </div>
     </section>
-
-
 </body>
-
-</html>
 
 </html>
