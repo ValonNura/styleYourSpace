@@ -1,31 +1,41 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: SignIn.php"); 
     exit();
 }
 
+require_once 'Database.php';
+require_once 'OrderManager.php';
+require_once 'OrderController.php';
 
-header("Cache-Control: no-cache, no-store, must-revalidate"); 
-header("Pragma: no-cache");
-header("Expires: 0");
+$db = (new Database('localhost', 'projekti', 'root', ''))->connect();
+$orderManager = new OrderManager($db);
+$orderController = new OrderController($orderManager);
+
+$search = $_GET['search'] ?? '';
+$status = $_GET['status'] ?? 'all';
+$date = $_GET['date'] ?? '';
+
+$orders = $orderController->filterOrders($search, $status, $date);
+if (isset($orders['error'])) {
+    die("Error fetching orders: " . $orders['error']);
+}
+
+
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management </title>
+    <title>Order Management</title>
     <link rel="stylesheet" href="css/orders.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
-    
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <ul>
@@ -38,9 +48,7 @@ header("Expires: 0");
             <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications</a></li>
             <li><a href="user_management.php"><i class="fas fa-users"></i> User Management</a></li>
             <li><a href="home.php" target="_blank"><i class="fas fa-home"></i> View Website</a></li>
-
-        </ul>       
-
+        </ul>
     </div>
 
     <div class="main-content">
@@ -52,44 +60,29 @@ header("Expires: 0");
                     <span>Your Profile</span>
                 </a>
                 <button onclick="window.location.href='logout.php'" class="logout-btn">Logout</button>
-            </div> 
+            </div>
         </header>
 
         <section class="filters">
-            <div class="filters-container">
-            <input type="text" class="search-bar" placeholder="Customer name or order ID">
-        
-        <select class="status-filter">
-            <option value="all">All statuses</option>
-            <option value="shipped">Shipped</option>
-            <option value="pending">Pending</option>
-            <option value="processing">Processing</option>
-            <option value="canceled">Canceled</option>
-        </select>
-        
-        <div class="date-filter-container">
-            <label for="order-date" class="date-label">From Date:</label>
-            <input type="date" id="order-date" class="date-filter">
-        </div>
-        
-        <button class="filter-btn">Search</button>
-    </div>
-</section>
+    <form method="GET" action="orders.php" class="filters-container">
+        <input type="text" name="search" class="search-bar" placeholder="Customer name or order ID" value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
 
-        <section class="stats">
-            <div class="stat-card">
-                <h3>Total Orders</h3>
-                <p>125</p>
-            </div>
-            <div class="stat-card">
-                <h3>Total Revenue</h3>
-                <p>$24,580</p>
-            </div>
-            <div class="stat-card">
-                <h3>Pending Orders</h3>
-                <p>15</p>
-            </div>
-        </section>
+        <select name="status" class="status-filter">
+            <option value="all" <?php if(($_GET['status'] ?? '') === 'all') echo 'selected'; ?>>All statuses</option>
+            <option value="shipped" <?php if(($_GET['status'] ?? '') === 'shipped') echo 'selected'; ?>>Shipped</option>
+            <option value="pending" <?php if(($_GET['status'] ?? '') === 'pending') echo 'selected'; ?>>Pending</option>
+            <option value="processing" <?php if(($_GET['status'] ?? '') === 'processing') echo 'selected'; ?>>Processing</option>
+            <option value="canceled" <?php if(($_GET['status'] ?? '') === 'canceled') echo 'selected'; ?>>Canceled</option>
+        </select>
+
+        <div class="date-filter-container">
+            <label for="order-date" class="date-label"></label>
+            <input type="date" name="date" id="order-date" class="date-filter" value="<?php echo htmlspecialchars($_GET['date'] ?? ''); ?>">
+        </div>
+
+        <button type="submit" class="filter-btn">Search</button>
+    </form>
+</section>
 
         <section>
             <h2>Orders Overview</h2>
@@ -101,144 +94,155 @@ header("Expires: 0");
                         <th>Email</th>
                         <th>Items</th>
                         <th>Order Date</th>
-                        <th>Status</th>
+                        <th>Shipping Method</th>
                         <th>Total ($)</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#001</td>
-                        <td>David James</td>
-                        <td>david.james@gmail.com</td>
-                        <td>Sofa, Coffee Table</td>
-                        <td>2025-01-05</td>
-                        <td>Shipped</td>
-                        <td>470</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="details-btn" onclick="showDetails('#001')">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#002</td>
-                        <td>Jane Smith</td>
-                        <td>jane.smith@hotmail.com</td>
-                        <td>Chair, Lamp</td>
-                        <td>2025-01-06</td>
-                        <td>Pending</td>
-                        <td>200</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="details-btn" onclick="showDetails('#002')">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#003</td>
-                        <td>John Doe</td>
-                        <td>john.doe@yandex.com</td>
-                        <td>Desk, Chair</td>
-                        <td>2025-01-07</td>
-                        <td>Processing</td>
-                        <td>300</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="details-btn" onclick="showDetails('#003')">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#004</td>
-                        <td>Emily Davis</td>
-                        <td>emily.davis@hotmail.com</td>
-                        <td>Couch, Coffee Table</td>
-                        <td>2025-01-08</td>
-                        <td>Canceled</td>
-                        <td>150</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="details-btn" onclick="showDetails('#004')">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#005</td>
-                        <td>Michael Brown</td>
-                        <td>michael.brown@gmail.com</td>
-                        <td>Dining Table, Chairs</td>
-                        <td>2025-01-09</td>
-                        <td>Shipped</td>
-                        <td>800</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="details-btn" onclick="showDetails('#005')">Details</button>
-                        </td>
-                    </tr>
+                    <?php foreach ($orders as $order): ?>
+                        <tr>
+                            <td>#<?php echo htmlspecialchars($order['id']); ?></td>
+                            <td><?php echo htmlspecialchars($order['customer_name']); ?></td>
+                            <td><?php echo htmlspecialchars($order['email']); ?></td>
+                            <td><?php echo htmlspecialchars($order['product_name']); ?> (<?php echo htmlspecialchars($order['quantity']); ?>)</td>
+                            <td><?php echo htmlspecialchars($order['order_date']); ?></td>
+                            <td><?php echo htmlspecialchars($order['shipping_method']); ?></td>
+                            <td><?php echo htmlspecialchars($order['total_price']); ?></td>
+                            <td class="action-buttons">
+                              <button class="edit-btn" onclick="showEdit('<?php echo htmlspecialchars($order['id']); ?>')">Edit</button>
+                              <button class="details-btn" onclick="showDetails('<?php echo htmlspecialchars($order['id']); ?>')">Details</button>
+                              <button class="delete-btn" onclick="deleteOrder('<?php echo htmlspecialchars($order['id']); ?>')">Delete</button>
+</td>
 
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
 
-      
-        <div class="modal" id="order-details">
+
+        <div id="editModal" class="modal">
             <div class="modal-content">
-                <span class="close-btn" onclick="closeDetails()">&times;</span>
-                <h3>Order Details</h3>
-                <p><strong>Order ID:</strong> <span id="order-id"></span></p>
-                <p><strong>Customer:</strong> <span id="customer-name"></span></p>
-                <p><strong>Items:</strong> <span id="order-items"></span></p>
-                <p><strong>Total:</strong> <span id="order-total"></span></p>
+                <span class="close" onclick="closeEditModal()">&times;</span>
+                <h2>Edit Order</h2>
+                <form id="editForm">
+                    <input type="hidden" id="orderId">
+                    <label for="customerName">Customer Name:</label>
+                    <input type="text" id="customerName" readonly>
+                    <label for="status">Status:</label>
+                    <select id="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Shipped">Shipped</option>
+                        <option value="Canceled">Canceled</option>
+                    </select>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1">
+                    <button type="submit" class="edit-btn">Save</button>
+                </form>
+            </div>
+        </div>
+
+    
+        <div id="detailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDetailsModal()">&times;</span>
+                <h2>Order Details</h2>
+                <p><strong>Order ID:</strong> <span id="detailOrderId"></span></p>
+                <p><strong>Customer:</strong> <span id="detailCustomerName"></span></p>
+                <p><strong>Product:</strong> <span id="detailProductName"></span></p>
+                <p><strong>Quantity:</strong> <span id="detailQuantity"></span></p>
+                <p><strong>Total Price:</strong> <span id="detailTotalPrice"></span></p>
+                <p><strong>Shipping Method:</strong> <span id="detailShippingMethod"></span></p>
+                <p><strong>Order Date:</strong> <span id="detailOrderDate"></span></p>
             </div>
         </div>
     </div>
 
-    <script>function showDetails(orderId) {
-        const modal = document.getElementById('order-details');
-        const orderData = {
-    '#001': {
-        id: '#001',
-        customer: 'David James',
-        items: 'Sofa, Coffee Table',
-        total: '$470'
-    },
-    '#002': {
-        id: '#002',
-        customer: 'Jane Smith',
-        items: 'Chair, Lamp',
-        total: '$200'
-    },
-    '#003': {
-        id: '#003',
-        customer: 'John Doe',
-        items: 'Desk, Chair',
-        total: '$300'
-    },
-    '#004': {
-        id: '#004',
-        customer: 'Emily Davis',
-        items: 'Couch, Coffee Table',
-        total: '$150'
-    },
-    '#005': {
-        id: '#005',
-        customer: 'Michael Brown',
-        items: 'Dining Table, Chairs',
-        total: '$800'
+    <script>
+    function showEdit(orderId) {
+        fetch('get_order_details.php?id=' + orderId)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('orderId').value = data.id;
+                document.getElementById('customerName').value = data.customer_name;
+                document.getElementById('status').value = data.shipping_method;
+                document.getElementById('quantity').value = data.quantity;
+                document.getElementById('editModal').style.display = 'flex';
+            })
+            .catch(error => console.error('Error:', error));
     }
-};
 
-    
-        const order = orderData[orderId];
-        document.getElementById('order-id').textContent = order.id;
-        document.getElementById('customer-name').textContent = order.customer;
-        document.getElementById('order-items').textContent = order.items;
-        document.getElementById('order-total').textContent = order.total;
-    
-        modal.style.display = 'flex'; 
+    function showDetails(orderId) {
+        fetch('get_order_details.php?id=' + orderId)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('detailOrderId').textContent = data.id;
+                document.getElementById('detailCustomerName').textContent = data.customer_name;
+                document.getElementById('detailProductName').textContent = data.product_name;
+                document.getElementById('detailQuantity').textContent = data.quantity;
+                document.getElementById('detailTotalPrice').textContent = data.total_price;
+                document.getElementById('detailShippingMethod').textContent = data.shipping_method;
+                document.getElementById('detailOrderDate').textContent = data.order_date;
+                document.getElementById('detailsModal').style.display = 'flex';
+            })
+            .catch(error => console.error('Error:', error));
     }
-    
-    function closeDetails() {
-        document.getElementById('order-details').style.display = 'none';
+     
+    function deleteOrder(orderId) {
+    if (confirm("Are you sure you want to delete this order?")) {
+        fetch('delete_order.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: orderId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Order deleted successfully!');
+                location.reload();  
+            } else {
+                alert('Failed to delete order.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
     }
-    
+}
+
+
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    function closeDetailsModal() {
+        document.getElementById('detailsModal').style.display = 'none';
+    }
+
+    document.getElementById('editForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const orderId = document.getElementById('orderId').value;
+        const status = document.getElementById('status').value;
+        const quantity = document.getElementById('quantity').value;
+
+        fetch('update_order.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: orderId, status: status, quantity: quantity })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Order updated successfully!');
+                closeEditModal();
+                location.reload();
+            } else {
+                alert('Failed to update order.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
     </script>
 </body>
 </html>
